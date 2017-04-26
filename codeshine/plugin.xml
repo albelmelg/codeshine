@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor name="Sample XML Editor" extensions="xml" icon="icons/lupa2.gif" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" class="codeshine.editors.XMLEditor" id="codeshine.editors.XMLEditor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet label="Sample Action Set" visible="true" id="codeShine.actionSet">
+         <menu label="Sample &amp;Menu" id="sampleMenu">
+            <separator name="sampleGroup">
+            </separator>
+         </menu>
+         <action label="&amp;Sample Action" icon="icons/lupa2.gif" class="codeshine.actions.codeAction" tooltip="Hello, Eclipse world" menubarPath="sampleMenu/sampleGroup" toolbarPath="sampleGroup" id="codeshine.actions.codeAction">
+         </action>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page name="COPS" class="codeshine.preferences.CodePreferencePage" id="codeshine.preferences.CodePreferencePage">
+      </page>
+      <page name="Appearance" class="codeshine.preferences.CodeAppearancePreferencePage" id="codeshine.preferences.CodeAppearancePreferencePage" category="codeshine.preferences.CodePreferencePage">
+      </page>
+      <page name="Speech" class="codeshine.preferences.CodeSpeechPreferencePage" id="codeshine.preferences.CodeSpeechPreferencePage" category="codeshine.preferences.CodePreferencePage">
+      </page>
+      <page name="Profiles" class="codeshine.preferences.CodeProfilesPreferencePage" id="codeshine.preferences.CodeColorsPreferencePage" category="codeshine.preferences.CodePreferencePage">
+      </page>
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="codeshine.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension point="org.eclipse.ui.views">
+      <category name="COPS" id="codeShine">
+      </category>
+      <view name="COPS View" icon="icons/lupa2.gif" category="codeShine" class="codeshine.views.CodeView" id="codeshine.views.CodeView">
+      </view>
+   </extension>
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+         <view ratio="0.5" relative="org.eclipse.ui.views.TaskList" relationship="right" id="codeshine.views.CodeView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
