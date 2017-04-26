@@ -1,54 +1,46 @@
 package codeshine.views;
 
-import java.awt.event.TextListener;
-import java.net.*;
-
-import javax.swing.text.Highlighter.Highlight;
-
-import java.io.IOException;
-
-import org.eclipse.ui.part.*;
-import org.eclipse.ui.IEditorPart;
+import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.jface.text.Document;
+import org.eclipse.jface.text.ITextSelection;
+import org.eclipse.jface.text.source.SourceViewer;
+import org.eclipse.jface.text.source.VerticalRuler;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.texteditor.IDocumentProvider;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
+import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
-import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
-import org.eclipse.ui.*;
-import org.eclipse.ui.plugin.*;
-import org.eclipse.core.runtime.Plugin;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
-import org.eclipse.jface.action.*;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.text.*;
-import org.eclipse.jface.viewers.*;
-import org.eclipse.jface.text.Document;
-import org.eclipse.jface.text.source.SourceViewer;
-import org.eclipse.jface.text.source.VerticalRuler;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.preference.*;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.custom.StyledTextContent;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Font;
 
-import codeshine.preferences.IPreferenceConstants;
 import codeshine.Activator;
+import codeshine.preferences.IPreferenceConstants;
 import codeshine.speech.AudioRecorder;
-
-import org.eclipse.ui.actions.*;
 
 
 public class CodeView extends ViewPart implements ISelectionListener {
@@ -58,13 +50,13 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	private Action decreaseAction;
 	private Action recogAction;
 	private ActionFactory.IWorkbenchAction openPreferencesAction;
-	private StyledText styledText;
+
 	private CodeControl codeControl;
 //	TODO keep colors in the main ViewPart class
 	private Color backgroundColor;
 	private Color foregroundColor;
 	private Color highlightColor;
-	private StyledTextContent content;			// native content (default or user specified)
+		// native content (default or user specified)
 	//protected final StyledText styledText1=null;
 	private AudioRecorder ar;
 	private boolean recogActive;
@@ -165,7 +157,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 			{
 				  public void selectionChanged(SelectionChangedEvent event){
 					  int offset = ((ITextSelection)event.getSelection()).getOffset();
-					  int length = ((ITextSelection)event.getSelection()).getLength();
+					  //int length = ((ITextSelection)event.getSelection()).getLength();
 					  codeControl.updatePosition(offset);
 				  }
 				});
