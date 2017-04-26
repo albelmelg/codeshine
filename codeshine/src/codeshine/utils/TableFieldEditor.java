@@ -24,51 +24,34 @@
 package codeshine.utils;
 
 
-import java.awt.Cursor;
-import java.util.Hashtable;
-
 import javax.accessibility.Accessible;
 import javax.accessibility.AccessibleContext;
 
 import org.eclipse.jface.preference.FieldEditor;
-
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
-
-
 import org.eclipse.swt.SWT;
-
+import org.eclipse.swt.custom.ControlEditor;
+import org.eclipse.swt.custom.TableCursor;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.events.FocusAdapter;
-import org.eclipse.swt.events.FocusEvent;
-
 import org.eclipse.swt.layout.GridData;
-
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 
-import org.eclipse.swt.custom.ControlEditor;
-import org.eclipse.swt.custom.TableCursor;
-import org.eclipse.swt.custom.TableEditor;
 //import org.eclipse.ui.internal.presentations.UpdatingActionContributionItem;
 import codeshine.preferences.IPreferenceConstants;
-import codeshine.utils.TableViewerSorter;
-import codeshine.utils.StringUtils;
 
 
 /**
@@ -757,7 +740,6 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 
 
 	public AccessibleContext getAccessibleContext() {
-		// TODO Auto-generated method stub
 		return null;
 	}
     
