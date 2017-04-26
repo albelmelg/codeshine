@@ -47,9 +47,7 @@ import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
@@ -67,11 +65,9 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.custom.ControlEditor;
 import org.eclipse.swt.custom.TableCursor;
 import org.eclipse.swt.custom.TableEditor;
-import org.eclipse.ui.internal.presentations.UpdatingActionContributionItem;
-
+//import org.eclipse.ui.internal.presentations.UpdatingActionContributionItem;
 import codeshine.preferences.IPreferenceConstants;
 import codeshine.utils.TableViewerSorter;
-
 import codeshine.utils.StringUtils;
 
 
