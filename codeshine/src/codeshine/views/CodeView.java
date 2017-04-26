@@ -1,31 +1,29 @@
 package codeshine.views;
 
-//import java.awt.event.TextListener;
+import java.awt.event.TextListener;
+import java.net.*;
 
-//import java.net.*;
-
-//import javax.swing.text.Highlighter.Highlight;
+import javax.swing.text.Highlighter.Highlight;
 
 import java.io.IOException;
 
 import org.eclipse.ui.part.*;
-//import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
-//import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
+import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
 import org.eclipse.ui.*;
-//import org.eclipse.ui.plugin.*;
-//import org.eclipse.core.runtime.Preferences.IPropertyChangeListener;
+import org.eclipse.ui.plugin.*;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
 import org.eclipse.jface.action.*;
@@ -38,8 +36,6 @@ import org.eclipse.jface.text.source.VerticalRuler;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.preference.*;
-
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
@@ -48,10 +44,10 @@ import org.eclipse.swt.custom.StyledTextContent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 
-
 import codeshine.preferences.IPreferenceConstants;
 import codeshine.Activator;
 import codeshine.speech.AudioRecorder;
+
 import org.eclipse.ui.actions.*;
 
 
@@ -62,7 +58,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	private Action decreaseAction;
 	private Action recogAction;
 	private ActionFactory.IWorkbenchAction openPreferencesAction;
-//	private StyledText styledText;
+	private StyledText styledText;
 	private CodeControl codeControl;
 //	TODO keep colors in the main ViewPart class
 	private Color backgroundColor;
