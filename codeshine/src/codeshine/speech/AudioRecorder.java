@@ -108,9 +108,11 @@ public class AudioRecorder
   /** Attributes for sound recording */
   private String strMixerName;
   private int    nInternalBufferSize;
+  private String strFormat;
   private int    nChannels;
   private float  fRate;
   private String strPath;
+  private String strExtension;
   private String strFilename;
   private AudioFileFormat.Type targetType;
 
@@ -169,13 +171,12 @@ public class AudioRecorder
     iatros = null;
 
     // Convertion from wav to raw
-    System.out.println("Hasta aquí me ejecuto 2");
+ 
     convert=strPath+"wav2raw";
-    System.out.println("Hasta aquí me ejecuto 3");
     // Start iAtros recogniser
     try {
-       iatros = Runtime.getRuntime().exec("/bin/bash -c "+iatrosOff);
-      //iatros = Runtime.getRuntime().exec("/bin/bash "+iatrosOff);
+      // iatros = Runtime.getRuntime().exec("/bin/bash -c "+iatrosOff);
+      iatros = Runtime.getRuntime().exec("/bin/bash "+iatrosOff);
     } catch (IOException e) {
       System.exit(-1);
     }
@@ -184,7 +185,7 @@ public class AudioRecorder
 
   public void startRecording() {
     targetDataLine = AudioCommon.getTargetDataLine( strMixerName, audioFormat, nInternalBufferSize);
-    if (targetDataLine == null) { out("can't get TargetDataLine, exiting.");    System.out.println("Hasta aquí me ejecuto 4"); System.exit(1); }
+    if (targetDataLine == null) { out("can't get TargetDataLine, exiting."); System.exit(1); }
     outputSignalFile = new File(strFilename);
     recorder = new DirectRecorder( targetDataLine, targetType, outputSignalFile);
     recorder.start();
@@ -207,7 +208,7 @@ public class AudioRecorder
     String result="";
 
     // Convert wav to raw
-    // out("Converting wav to raw...");
+     out("Converting wav to raw...");
     try {
       // Process conv = Runtime.getRuntime().exec("/bin/bash -c "+convert);
       Process conv = Runtime.getRuntime().exec("/bin/bash "+convert);
@@ -215,10 +216,10 @@ public class AudioRecorder
     } catch (Exception e) {
       System.exit(-1);
     }
-    // out("Done!");
+    out("Done!");
 
-    // Convert raw to CC
-    // out("Converting raw to CC...");
+     //Convert raw to CC
+     out("Converting raw to CC...");
     try {
       // Process iatrosEnc = Runtime.getRuntime().exec("/bin/bash -c "+iatrosCeps);
       Process iatrosEnc = Runtime.getRuntime().exec("/bin/bash "+iatrosCeps);
@@ -226,12 +227,12 @@ public class AudioRecorder
     } catch (Exception e) {
       System.exit(-1);
     }
-    // out("Done!");
+     out("Done!");
 
     // Wait for output recognition
-    // out("Waiting for output...");
+    out("Waiting for output...");
     while (!outFile.exists());
-    // out("Done!");
+     out("Done!");
     do {
       ok=true;
       try {

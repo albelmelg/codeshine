@@ -20,14 +20,10 @@ import codeshine.Activator;
 public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		implements IWorkbenchPreferencePage {
 
-	/**
-	 * 
-	 */
 	ColorFieldEditor textColourFE;
 	ColorFieldEditor backgroundColourFE;
 	ColorFieldEditor hightlightFE;
 	FontFieldEditor fontFE;
-//	RadioGroupFieldEditor profilesFE;
 	BooleanFieldEditor customProfileFE;
 	Label fontLabel;
 	
@@ -39,7 +35,6 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		
 	public CodeAppearancePreferencePage(String title, ImageDescriptor image, int style) {
 		super(title, image, style);
-		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
@@ -47,16 +42,12 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 	 */
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		// TODO Auto-generated method stub
 
 	}
-
-
 	/* (non-Javadoc)
 	 * @see org.eclipse.jface.preference.IPreferencePage#performCancel()
 	 */
-	
-	
+
 	public boolean performCancel() {
 		// TODO Auto-generated method stub
 		return false;
@@ -85,14 +76,8 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		
 	}
 
-	protected void createFieldEditors() {
-		// TODO Auto-generated method stub
-//		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-//		gd.horizontalSpan = 3;
-		
+	protected void createFieldEditors() {	
 		fontFE = new FontFieldEditor(IPreferenceConstants.FONT_TYPE, "&Font", getFieldEditorParent());
-//		customProfileFE = new BooleanFieldEditor(IPreferenceConstants.CUSTOM_PROFILE, "Customize colors", getFieldEditorParent());
-//		customProfileFE.fillIntoGrid(getFieldEditorParent(), 3);
 		textColourFE = new ColorFieldEditor(IPreferenceConstants.FONT_COLOR,
 				"&Text colour ", getFieldEditorParent() );
 		textColourFE.setEnabled(true, getFieldEditorParent());
@@ -115,7 +100,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		IPropertyChangeListener preferenceListener = new IPropertyChangeListener(){
 			public void propertyChange(PropertyChangeEvent event){
 				if (event.getProperty().equals(IPreferenceConstants.P_BOOLEAN)){
-					System.out.println("boolean preference new value: " + event.getNewValue());
+					//System.out.println("boolean preference new value: " + event.getNewValue());
 					boolean b = Activator.getDefault().getPreferenceStore().getBoolean(IPreferenceConstants.P_BOOLEAN); 
 					textColourFE.setEnabled(b, getFieldEditorParent());
 					backgroundColourFE.setEnabled(b, getFieldEditorParent());

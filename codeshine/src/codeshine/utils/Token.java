@@ -38,7 +38,7 @@ public class Token {
 		this.replacement = replacement;
 	}
 	public boolean equals(Token token){
-		return (this.value.equals(token.getValue()));
+		return this.value.equals(token.getValue());
 	}
 }
 

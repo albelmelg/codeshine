@@ -1,14 +1,10 @@
 package codeshine.preferences;
 
-import org.eclipse.jdt.internal.ui.preferences.formatter.ProfileManager.CustomProfile;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.preference.*;
-import org.eclipse.swt.widgets.*;
-import org.eclipse.swt.SWT;
-import org.eclipse.ui.IWorkbenchPreferencePage;
+import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.ui.IWorkbench;
-import codeshine.speech.TtsClass;
+import org.eclipse.ui.IWorkbenchPreferencePage;
 import codeshine.Activator;
 
 
@@ -47,46 +43,15 @@ public class CodePreferencePage
 	 * restore itself.
 	 */
 	public void createFieldEditors() {
-		
-		/*		
-		profiles = new RadioGroupFieldEditor(
-				IPreferenceConstants.PROFILE, "Default user profile", 1, 
-				new String[][] {{"&Low Vision", "high_contrast"}, {"&Color deficiency", "color_def"},
-						{"&Both", "both_def"}}, getFieldEditorParent(), true);
-	
-		customProfile = new BooleanFieldEditor(
-				IPreferenceConstants.P_BOOLEAN,
-				"C&ustom config",
-				getFieldEditorParent());*/
+
 		soundEvents = new BooleanFieldEditor(
 				IPreferenceConstants.SOUND_EVENTS, "&Notify editor changes",
 				getFieldEditorParent()); 
-		
-//		profiles.setEnabled(!Activator.getDefault().getPreferenceStore().getBoolean(IPreferenceConstants.P_BOOLEAN), getFieldEditorParent());
-		
 		soundEvents.loadDefault();
-		
-//		addField(profiles);
-//		addField(customProfile);
 		addField(soundEvents);
-		
 		Activator.getDefault().getPreferenceStore().setDefault(IPreferenceConstants.SOUND_EVENTS, false);
-		
-/*		IPropertyChangeListener preferenceListener = new IPropertyChangeListener(){
-			public void propertyChange(PropertyChangeEvent event){
-				if (event.getProperty().equals(IPreferenceConstants.P_BOOLEAN)){
-					boolean custom = customProfile.getBooleanValue(); 
-					profiles.setEnabled(!custom, getFieldEditorParent());
-					System.out.println("boolean_ preference");
-				}
-				
-			}
-		};*/
-//		customProfile.setPropertyChangeListener(preferenceListener);
-	
-//		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(preferenceListener);
-		
-	}
+		};
+
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
@@ -94,8 +59,6 @@ public class CodePreferencePage
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 		
-		
-//		
 	}
 	public void performDefaults(){
 		profiles.loadDefault();

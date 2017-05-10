@@ -146,10 +146,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
         this.input = input;
         this.init(name, labelText);
         this.createControl(parent);
-//        System.out.println("#elements before: " + ((TokenList)this.input).length());
-    } // end constructor TableFieldEditor(String, String, Composite, IStructuredContentProvider, ITableLabelProvider, String[], Object)
-    
-    
+    } 
     /**
      * </p>
      * Returns the number of controls in this 
@@ -162,7 +159,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
      */
     public int getNumberOfControls() {       
         return (1);
-    } // end method getNumberOfControls()
+    } 
     
     
     /**
@@ -181,7 +178,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
      */
     public void setSelectionColumn(int columnIndex) {
         this.selectionColumn = columnIndex;
-    } // end method setSelectionColumn(int)
+    }
     
     
     /**
@@ -199,8 +196,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
      * @see #setSelectionColumn(int)
      */
     public int getSelectionColumn() {
-        return (this.selectionColumn);
-    } // end method getSelectionColumn()
+        return this.selectionColumn;
+    }
     
     
     /**
@@ -235,7 +232,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
             return (this.labelProvider.getColumnText(selection
                     .getFirstElement(), this.selectionColumn));
         }
-    } // end method getSelection()
+    }
     
     
     /**
@@ -267,9 +264,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     			this.viewer.setSorter(null);    			
     		}
     	}
-    } // end method setSortingEnabled(boolean)
-    
-    
+    } 
     /**
      * <p>
      * Returns true if <code>Table</code> sorting is enabled;
@@ -282,9 +277,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
      * @see #setSortingEnabled(boolean)
      */
     public boolean isSortingEnabled() {
-    	return (this.sorterHandler != null);
-    } // end method isSortingEnabled()
-    
+    	return this.sorterHandler != null;
+    } 
     
     /**
 	 * <p>
@@ -306,7 +300,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     	if (this.isSortingEnabled()) {
     		this.sorterHandler.sort(columnIndex, ascending);
     	}
-    } // end method sort(int, boolean)
+    } 
     
     
     /**
@@ -323,11 +317,11 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 	 */
     public int getSortingColumn() {
     	if (this.isSortingEnabled()) {
-    		return (this.sorter.getSortingColumn());
+    		return this.sorter.getSortingColumn();
     	} else {
-    		return (-1);
+    		return -1;
     	}
-    } // end method getSortingColumn()
+    } 
     
     
     /**
@@ -344,11 +338,11 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 	 */
     public boolean isSortAscending() {
     	if (this.isSortingEnabled()) {
-    		return (this.sorter.isAscending());
+    		return this.sorter.isAscending();
     	} else {
-    		return (false);
+    		return false;
     	}
-    } // end method isSortAscending()
+    } 
     
 
     /**
@@ -369,7 +363,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     		TableColumn column = this.table.getColumn(columnIndex);
     		column.setWidth(width);
     	}
-    } // end method setColumnWidth(int, int)
+    } 
     
     
     /**
@@ -388,11 +382,11 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     public int getColumnWidth(int columnIndex) {
     	if (columnIndex >= 0 && columnIndex < this.columnHeaders.length) {
     		TableColumn column = this.table.getColumn(columnIndex);
-    		return (column.getWidth());
+    		return column.getWidth();
     	} else {
-    		return (0);
+    		return 0;
     	}
-    } // end method getColumnWidth(int)
+    } 
     
     
     /**
@@ -437,27 +431,23 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
         this.table.addSelectionListener(new SelectionListener() {
             public void widgetDefaultSelected(SelectionEvent e) {               
                 valueChanged();          
-            } // end method widgetDDefaultSelected(SelectionEvent)
-            
+            } 
             public void widgetSelected(SelectionEvent e) {
                 valueChanged();
-            } // end method widgetSelected(SelectionEvent)
+            } 
         });        
         
         this.initializeColumns();
         this.initializeViewer();
         
-        GridData gd = new GridData();
+        final GridData gd = new GridData();
         gd.horizontalSpan = numColumns - 1;
         gd.horizontalAlignment = GridData.FILL;
         gd.verticalAlignment = GridData.FILL;
         gd.grabExcessHorizontalSpace = true;
         gd.grabExcessVerticalSpace = true;
         this.table.setLayoutData(gd);
-        this.table.setLinesVisible(true);
-
-//Tivi's hack that makes tableFE editable.
-        
+        this.table.setLinesVisible(true);     
         final TableCursor cursor = new TableCursor(table, SWT.NONE);
         final ControlEditor editor = new ControlEditor(cursor);
         editor.grabHorizontal = true;
@@ -630,7 +620,7 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     	this.setPresentsDefaultValue(false);
     	
     	
-        IStructuredSelection selection = 
+        final IStructuredSelection selection = 
             (IStructuredSelection) this.viewer.getSelection();
         
         String newValue;
@@ -744,4 +734,4 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 	}
     
     
-} // end class TableFieldEditor
+} 

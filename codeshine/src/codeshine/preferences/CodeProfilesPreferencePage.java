@@ -3,65 +3,28 @@
  */
 package codeshine.preferences;
 
-import org.eclipse.swt.widgets.Button;
-
-import java.awt.image.TileObserver;
-import java.util.logging.*;
-import java.io.*;
-
-import org.eclipse.jface.preference.BooleanFieldEditor;
-import org.eclipse.jface.preference.ColorFieldEditor;
-import org.eclipse.jface.preference.FieldEditor;
-import org.eclipse.jface.preference.FileFieldEditor;
-import org.eclipse.jface.preference.FontFieldEditor;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.RadioGroupFieldEditor;
-import org.eclipse.jface.preference.StringFieldEditor;
+import java.io.File;
+import java.io.InvalidObjectException;
 import org.eclipse.jface.dialogs.MessageDialog;
-
-//import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.text.link.LinkedModeUI.ExitFlags;
+import org.eclipse.jface.preference.FileFieldEditor;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.CellEditor.LayoutData;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Tree;
-import org.eclipse.swt.widgets.TreeColumn;
-import org.eclipse.swt.widgets.TreeItem;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.layout.*;
-
-
-import org.eclipse.swt.custom.TableEditor;
-import org.eclipse.swt.events.*;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.Rectangle;
-
-import sun.util.logging.resources.*;//resources.logging;
-
-
 import codeshine.Activator;
-import codeshine.speech.TtsClass;
-import codeshine.utils.*;
+import codeshine.utils.ITableContentProvider;
+import codeshine.utils.TableFieldEditor;
+import codeshine.utils.TokenList;
+import codeshine.utils.TokensLabelProvider;
 
 
 public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
@@ -168,8 +131,7 @@ public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
 		};
 		
 		tableFE.setPropertyChangeListener(profilesPrefListener);
-//		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(profilesPrefListener);
-		
+
 	}
 	/* (non-Javadoc)
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)

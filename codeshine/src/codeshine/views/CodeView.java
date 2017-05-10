@@ -267,8 +267,6 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		/*Reconocimiento de voz COPS*/
 		recogAction = new Action() {
 			public void run() {
-				//System.out.println("DENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-				//try {
 					if (recogActive) {
 						System.out.println("Stopping recording");        
 						recogAction.setImageDescriptor(Activator.getImageDescriptor("icons/micro.gif"));

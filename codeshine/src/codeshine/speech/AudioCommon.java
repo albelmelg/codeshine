@@ -253,11 +253,5 @@ public class AudioCommon
 		System.out.println(strMessage);
 	}
 
-
-
 }
-
-
-
-/*** AudioCommon.java ***/
 
