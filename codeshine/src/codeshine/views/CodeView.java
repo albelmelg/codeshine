@@ -52,12 +52,10 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	private ActionFactory.IWorkbenchAction openPreferencesAction;
 
 	private CodeControl codeControl;
-//	TODO keep colors in the main ViewPart class
 	private Color backgroundColor;
 	private Color foregroundColor;
 	private Color highlightColor;
-		// native content (default or user specified)
-	//protected final StyledText styledText1=null;
+
 	private AudioRecorder ar;
 	private boolean recogActive;
 
@@ -188,7 +186,6 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	}
 	public void setFocus() {	
 		viewer.getControl().setFocus();
-//		Accessible obj = viewer.getControl().getAccessible();
 		
 	}
 	private void hookContextMenu() {
@@ -288,22 +285,9 @@ public class CodeView extends ViewPart implements ISelectionListener {
 					else {
 						System.out.println("Starting recording");
 						ar.startRecording();
-						recogAction.setImageDescriptor(Activator.getImageDescriptor("icons/micro2.gif"));
+						recogAction.setImageDescriptor(Activator.getImageDescriptor("/icons/micro2.gif"));
 						recogActive=true;
 					}
-					//codeControl.recognitionIatros();
-					//codeControl.recognitionIatros2();
-					//styledText1.insert("WOLAAAAAAAAA");
-					
-				//} catch (IOException e) {
-					// TODO Auto-generated catch block
-					//e.printStackTrace();
-				//} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					//e.printStackTrace();
-				//}
-				//System.out.println("DENTROOOOOOOOOOOOOOOOOFUERAAAAAAAAAAAAAAAAAAA");				
-				//content.setText("HOLA Que tal nen");
 
 			}
 		};

@@ -48,17 +48,15 @@ import java.io.OutputStream;
 
 package codeshine.speech;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
-import javax.sound.sampled.DataLine;
-import javax.sound.sampled.TargetDataLine;
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.Mixer;
 import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.TargetDataLine;
 
 // IDEA: recording format vs. storage format; possible conversion?
 /**	<titleabbrev>AudioRecorder</titleabbrev>
@@ -110,11 +108,9 @@ public class AudioRecorder
   /** Attributes for sound recording */
   private String strMixerName;
   private int    nInternalBufferSize;
-  private String strFormat;
   private int    nChannels;
   private float  fRate;
   private String strPath;
-  private String strExtension;
   private String strFilename;
   private AudioFileFormat.Type targetType;
 
@@ -149,10 +145,10 @@ public class AudioRecorder
     nChannels = DEFAULT_CHANNELS;
     fRate = DEFAULT_RATE;
     strExtension = null;
-    strPath="/home/demos/iatros_cops/";
+    strPath="/Documentos/TFG/tfg/iatros_cops/";
     strFilename = strPath+"cops.wav";
     targetType = DEFAULT_TARGET_TYPE;
-
+    System.out.println("Hasta aquí me ejecuto 1");
     // Sound file
     outputSignalFile = null;
     nOutputFormatIndex = 2;          // For s16_le
@@ -173,12 +169,13 @@ public class AudioRecorder
     iatros = null;
 
     // Convertion from wav to raw
+    System.out.println("Hasta aquí me ejecuto 2");
     convert=strPath+"wav2raw";
-
+    System.out.println("Hasta aquí me ejecuto 3");
     // Start iAtros recogniser
     try {
-      // iatros = Runtime.getRuntime().exec("/bin/bash -c "+iatrosOff);
-      iatros = Runtime.getRuntime().exec("/bin/bash "+iatrosOff);
+       iatros = Runtime.getRuntime().exec("/bin/bash -c "+iatrosOff);
+      //iatros = Runtime.getRuntime().exec("/bin/bash "+iatrosOff);
     } catch (IOException e) {
       System.exit(-1);
     }
@@ -187,7 +184,7 @@ public class AudioRecorder
 
   public void startRecording() {
     targetDataLine = AudioCommon.getTargetDataLine( strMixerName, audioFormat, nInternalBufferSize);
-    if (targetDataLine == null) { out("can't get TargetDataLine, exiting."); System.exit(1); }
+    if (targetDataLine == null) { out("can't get TargetDataLine, exiting.");    System.out.println("Hasta aquí me ejecuto 4"); System.exit(1); }
     outputSignalFile = new File(strFilename);
     recorder = new DirectRecorder( targetDataLine, targetType, outputSignalFile);
     recorder.start();
@@ -359,10 +356,10 @@ public class AudioRecorder
       m_line.drain();
       m_line.close();
       m_bRecording = false;
+      System.out.println("Me ejecuto");
     }
   }
 
-  // public static class DirectRecorder extends AbstractRecorder {
   public class DirectRecorder extends AbstractRecorder {
     private AudioInputStream m_audioInputStream;
 
@@ -375,12 +372,10 @@ public class AudioRecorder
       try {
         AudioSystem.write( m_audioInputStream, m_targetType, m_file);
       } catch (IOException e) {
-        e.printStackTrace();
+
       }
     }
   }
 
 }
-
-/*** AudioRecorder.java ***/
 
