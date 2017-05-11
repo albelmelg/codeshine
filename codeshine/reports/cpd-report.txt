@@ -1,0 +1,479 @@
+Found a 16 line (91 tokens) duplication in the following files: 
+Starting at line 37 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TestTrie.java
+Starting at line 153 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+
+			Token t = null;
+			while (currPos < input.length()){
+				t = trie.trackRecursive(chars, currPos);
+				if (t != null){
+					ret += t.getReplacement();
+					currPos += t.getValue().length();
+					System.out.println("Reemplazo ->" + t.getReplacement());
+				}
+				else if (currPos<input.length()){
+					ret += chars[currPos];
+					currPos++;
+				}
+			}
+			return ret;			
+			}
+}
+=====================================================================
+Found a 33 line (87 tokens) duplication in the following files: 
+Starting at line 839 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+Starting at line 871 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+
+    public static String arrayToCSV(String[] input, char delimiter) {
+        if (input != null) {
+            StringBuffer csvList = new StringBuffer();
+            for (int i = 0; i < input.length; i++) {
+                csvList.append(input[i]);
+                if (i != input.length - 1) {
+                    csvList.append(delimiter);
+                }
+            }
+            return (csvList.toString());
+        } else {
+            return (EMPTY_STRING);
+        }
+    } // end method arrayToCSV(String[], char)
+
+    
+    /**
+     * <p>
+     * Converts the specified <code>input</code> to a single 
+     * <code>String</code> in which the <code>input</code> elements
+     * are separated by the given <code>delimiter</code>
+     * </p>
+     * 
+     * @param input an <code>int</code> array holding the elements
+     * @param delimiter the delimiter char to use
+     * 
+     * @return a single <code>String</code> that separates the 
+     * <code>input</code> elements by the given <code>delimiter</code>
+     * 
+     * @see #arrayToCSV(String[], char)
+     * @see #arrayToCSV(Point[], char)
+     */
+    public static String arrayToCSV(int[] input, char delimiter) {
+=====================================================================
+Found a 16 line (65 tokens) duplication in the following files: 
+Starting at line 27 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TokensLabelProvider.java
+Starting at line 22 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/ProfileConfigProvider.java
+
+		try{
+			t = (Token)element;
+		}catch (ClassCastException e){e.printStackTrace();}
+		switch (columnIndex) {
+			case 0: {
+				retValue = t.getValue();
+				break;
+			}
+			case 1: {
+				retValue = t.getReplacement();
+				break;
+			}
+			case 2: {
+				retValue = t.getInfo();
+				break;
+			}
+=====================================================================
+Found a 10 line (60 tokens) duplication in the following files: 
+Starting at line 214 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 233 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		manager.add(increaseAction);
+		manager.add(new Separator());
+		manager.add(decreaseAction);
+		manager.add(new Separator());
+		manager.add(recogAction);
+		manager.add(new Separator());
+		manager.add(speakAction);
+		manager.add(openPreferencesAction);
+	}
+	private void fillContextMenu(IMenuManager manager) {
+=====================================================================
+Found a 6 line (52 tokens) duplication in the following files: 
+Starting at line 71 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+Starting at line 30 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/FreeTTSHelloWorld.java
+
+        Voice[] voices = this.voiceManager.getVoices();
+        for (int i = 0; i < voices.length; i++) {
+            System.out.println("    " + voices[i].getName()
+                               + " (" + voices[i].getDomain() + " domain)");
+        }
+    }
+=====================================================================
+Found a 11 line (47 tokens) duplication in the following files: 
+Starting at line 114 of /home/alison/git/codeshine/codeshine/src/codeshine/views/SampleView.java
+Starting at line 202 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		getSite().registerContextMenu(menuMgr, viewer);
+	}
+
+	private void contributeToActionBars() {
+		IActionBars bars = getViewSite().getActionBars();
+		fillLocalPullDown(bars.getMenuManager());
+		fillLocalToolBar(bars.getToolBarManager());
+	}
+
+	private void fillLocalPullDown(IMenuManager manager) {
+		manager.add(action1);
+=====================================================================
+Found a 5 line (45 tokens) duplication in the following files: 
+Starting at line 839 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+Starting at line 871 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+Starting at line 903 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+
+    public static String arrayToCSV(String[] input, char delimiter) {
+        if (input != null) {
+            StringBuffer csvList = new StringBuffer();
+            for (int i = 0; i < input.length; i++) {
+                csvList.append(input[i]);
+=====================================================================
+Found a 5 line (40 tokens) duplication in the following files: 
+Starting at line 179 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeControl.java
+Starting at line 186 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeControl.java
+
+	protected void increaseFontSize(){
+		Font current_font = styledText.getFont();
+	  	FontData[] fd = current_font.getFontData();
+	  	int fontHeight = fd[0].getHeight();
+	  	fd[0].setHeight(fontHeight + 2);
+=====================================================================
+Found a 29 line (40 tokens) duplication in the following files: 
+Starting at line 843 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+Starting at line 875 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+Starting at line 909 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/StringUtils.java
+
+                csvList.append(input[i]);
+                if (i != input.length - 1) {
+                    csvList.append(delimiter);
+                }
+            }
+            return (csvList.toString());
+        } else {
+            return (EMPTY_STRING);
+        }
+    } // end method arrayToCSV(String[], char)
+
+    
+    /**
+     * <p>
+     * Converts the specified <code>input</code> to a single 
+     * <code>String</code> in which the <code>input</code> elements
+     * are separated by the given <code>delimiter</code>
+     * </p>
+     * 
+     * @param input an <code>int</code> array holding the elements
+     * @param delimiter the delimiter char to use
+     * 
+     * @return a single <code>String</code> that separates the 
+     * <code>input</code> elements by the given <code>delimiter</code>
+     * 
+     * @see #arrayToCSV(String[], char)
+     * @see #arrayToCSV(Point[], char)
+     */
+    public static String arrayToCSV(int[] input, char delimiter) {
+=====================================================================
+Found a 5 line (40 tokens) duplication in the following files: 
+Starting at line 39 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+Starting at line 59 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/FreeTTSHelloWorld.java
+
+        System.out.println("Using voice: " + voiceName);
+        try{
+          this.voiceManager = VoiceManager.getInstance();
+        }catch (Exception e){e.printStackTrace();}
+        System.out.println("Total of available voices: " + this.voiceManager.getVoices().length);
+=====================================================================
+Found a 4 line (35 tokens) duplication in the following files: 
+Starting at line 149 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableViewerSorterHandler.java
+Starting at line 163 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableViewerSorterHandler.java
+
+	private void registerColumns() {
+		TableColumn[] columns = this.table.getColumns();
+		for (int i = 0; i < columns.length; i++) {
+			columns[i].addSelectionListener(this);
+=====================================================================
+Found a 4 line (34 tokens) duplication in the following files: 
+Starting at line 195 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableViewerSorter.java
+Starting at line 222 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableViewerSorter.java
+
+            return (this.isAscending()
+        			? this.collator.compare(value1, value2)
+        			: (-this.collator.compare(value1, value2)));
+        } else {                        
+=====================================================================
+Found a 5 line (33 tokens) duplication in the following files: 
+Starting at line 119 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 154 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		viewer.addSelectionChangedListener(new ISelectionChangedListener()
+		{
+			  public void selectionChanged(SelectionChangedEvent event)
+			  {
+				  int offset = ((ITextSelection)event.getSelection()).getOffset();
+=====================================================================
+Found a 5 line (33 tokens) duplication in the following files: 
+Starting at line 310 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 223 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeControl.java
+
+		openPreferencesAction = ActionFactory.PREFERENCES.create(win);
+		
+		openPreferencesAction.setText("menu action");
+		openPreferencesAction.setToolTipText("show preferences menu");
+		openPreferencesAction.setImageDescriptor(Activator.getImageDescriptor("icons/preferences-system.gif"));
+=====================================================================
+Found a 6 line (33 tokens) duplication in the following files: 
+Starting at line 107 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+Starting at line 128 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+
+	public static void listMixersAndExit()
+	{
+		out("Available Mixers:");
+		Mixer.Info[]	aInfos = AudioSystem.getMixerInfo();
+		for (int i = 0; i < aInfos.length; i++)
+		{
+=====================================================================
+Found a 4 line (32 tokens) duplication in the following files: 
+Starting at line 70 of /home/alison/git/codeshine/codeshine/src/codeshine/views/EscribirEnFichero1.java
+Starting at line 29 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/FreeTTSHelloWorld.java
+
+System.out.println("voiceManager:"+voiceManager);
+Voice[] voices = voiceManager.getVoices();
+for (int i = 0; i < voices.length; i++) {
+System.out.println(" " + voices[i].getName()
+=====================================================================
+Found a 6 line (31 tokens) duplication in the following files: 
+Starting at line 99 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeSpeechPreferencePage.java
+Starting at line 114 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeProfilesPreferencePage.java
+
+		});
+		IPropertyChangeListener preferenceListener = 
+			new IPropertyChangeListener(){
+			public void propertyChange(org.eclipse.jface.util.PropertyChangeEvent event) {
+//				System.out.println("codeSpeechPrefs_" + event.getProperty().toString());
+				System.out.println("codeSpeechPrefs_value:  " + Activator.getDefault().
+=====================================================================
+Found a 5 line (30 tokens) duplication in the following files: 
+Starting at line 65 of /home/alison/git/codeshine/codeshine/src/codeshine/views/EscribirEnFichero1.java
+Starting at line 26 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/FreeTTSHelloWorld.java
+
+public static void listAllVoices()
+{
+System.out.println();
+System.out.println("All voices available:");
+VoiceManager voiceManager = VoiceManager.getInstance();
+=====================================================================
+Found a 10 line (30 tokens) duplication in the following files: 
+Starting at line 52 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeSpeechPreferencePage.java
+Starting at line 45 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeProfilesPreferencePage.java
+
+	public CodeSpeechPreferencePage() {
+		super(GRID);
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		setPreferenceStore(preferenceStore);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#createFieldEditors()
+	 */
+	protected void createFieldEditors() {
+=====================================================================
+Found a 8 line (29 tokens) duplication in the following files: 
+Starting at line 175 of /home/alison/git/codeshine/codeshine/src/codeshine/views/SampleView.java
+Starting at line 196 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		});
+	}
+	private void showMessage(String message) {
+		MessageDialog.openInformation(
+			viewer.getControl().getShell(),
+			"Sample View",
+			message);
+	}
+=====================================================================
+Found a 8 line (29 tokens) duplication in the following files: 
+Starting at line 710 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+Starting at line 720 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+
+                    if (selectionStr.equals(items[i].toString())) {
+                        StructuredSelection selection = new StructuredSelection(
+                                items[i]);
+                        this.viewer.setSelection(selection);
+                        selected = true;
+                    }
+                }
+            } else {
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 63 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 100 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeAppearancePreferencePage.java
+
+	IPropertyChangeListener preferenceListener = 
+		new IPropertyChangeListener(){
+		public void propertyChange(PropertyChangeEvent event) {
+			if (event
+					.getProperty()
+					.equals(IPreferenceConstants.BACK_COLOR)){
+=====================================================================
+Found a 3 line (28 tokens) duplication in the following files: 
+Starting at line 361 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+Starting at line 382 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+
+    public void setColumnWidth(int columnIndex, int width) {
+    	if (columnIndex >= 0 && columnIndex < this.columnHeaders.length) {
+    		TableColumn column = this.table.getColumn(columnIndex);
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 225 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioRecorder.java
+Starting at line 256 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioRecorder.java
+
+      Process iatrosEnc = Runtime.getRuntime().exec("/bin/bash "+iatrosCeps);
+      iatrosEnc.waitFor();
+    } catch (Exception e) {
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 73 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+Starting at line 92 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+
+		AudioFileFormat.Type[]	aTypes = AudioSystem.getAudioFileTypes();
+		for (int i = 0; i < aTypes.length; i++)
+		{
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 110 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+Starting at line 131 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+Starting at line 159 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioCommon.java
+
+		Mixer.Info[]	aInfos = AudioSystem.getMixerInfo();
+		for (int i = 0; i < aInfos.length; i++)
+		{
+=====================================================================
+Found a 7 line (26 tokens) duplication in the following files: 
+Starting at line 131 of /home/alison/git/codeshine/codeshine/src/codeshine/views/SampleView.java
+Starting at line 228 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		manager.add(action2);
+		// Other plug-ins can contribute there actions here
+		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+	}
+	
+	private void fillLocalToolBar(IToolBarManager manager) {
+		manager.add(action1);
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 71 of /home/alison/git/codeshine/codeshine/src/codeshine/views/EscribirEnFichero1.java
+Starting at line 71 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+
+Voice[] voices = voiceManager.getVoices();
+for (int i = 0; i < voices.length; i++) {
+System.out.println(" " + voices[i].getName()
+=====================================================================
+Found a 6 line (26 tokens) duplication in the following files: 
+Starting at line 73 of /home/alison/git/codeshine/codeshine/src/codeshine/views/EscribirEnFichero1.java
+Starting at line 32 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/FreeTTSHelloWorld.java
+
+System.out.println(" " + voices[i].getName()
++ " (" + voices[i].getDomain() + " domain)");
+}
+}
+//----
+public static javax.sound.sampled.AudioFileFormat.Type getAudioType(String file)
+=====================================================================
+Found a 6 line (26 tokens) duplication in the following files: 
+Starting at line 63 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 50 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+Starting at line 100 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeAppearancePreferencePage.java
+
+	IPropertyChangeListener preferenceListener = 
+		new IPropertyChangeListener(){
+		public void propertyChange(PropertyChangeEvent event) {
+			if (event
+					.getProperty()
+					.equals(IPreferenceConstants.BACK_COLOR)){
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 70 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 80 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 86 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+				backgroundColor = new Color(codeControl.getDisplay()
+						,PreferenceConverter.getColor(Activator.getDefault().getPreferenceStore()
+						,IPreferenceConstants.BACK_COLOR));
+=====================================================================
+Found a 5 line (26 tokens) duplication in the following files: 
+Starting at line 217 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 225 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+Starting at line 236 of /home/alison/git/codeshine/codeshine/src/codeshine/views/CodeView.java
+
+		manager.add(new Separator());
+		manager.add(recogAction);
+		manager.add(new Separator());
+		manager.add(speakAction);
+		manager.add(openPreferencesAction);
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 73 of /home/alison/git/codeshine/codeshine/src/codeshine/views/EscribirEnFichero1.java
+Starting at line 73 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+
+System.out.println(" " + voices[i].getName()
++ " (" + voices[i].getDomain() + " domain)");
+}
+}
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 16 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/Trie.java
+Starting at line 15 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TestTrie.java
+
+	public static void main(String[] args) {
+		Trie t = new Trie();
+		
+		t.addToken(new Token("//","single","bla"));
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 33 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TestTrie.java
+Starting at line 148 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/TtsClass.java
+
+	public static String trackString(String input, Trie trie){
+			
+			String ret="";
+			char[] chars = input.toCharArray();
+=====================================================================
+Found a 3 line (25 tokens) duplication in the following files: 
+Starting at line 708 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+Starting at line 717 of /home/alison/git/codeshine/codeshine/src/codeshine/utils/TableFieldEditor.java
+
+            if (this.selectionColumn == -1) {
+                for (int i = 0; i < items.length && !selected; i++) {
+                    if (selectionStr.equals(items[i].toString())) {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 215 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioRecorder.java
+Starting at line 226 of /home/alison/git/codeshine/codeshine/src/codeshine/speech/AudioRecorder.java
+
+      conv.waitFor();
+    } catch (Exception e) {
+      System.exit(-1);
+    }
+    out("Done!");
+
+     //Convert raw to CC
+     out("Converting raw to CC...");
+=====================================================================
+Found a 12 line (25 tokens) duplication in the following files: 
+Starting at line 110 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeSpeechPreferencePage.java
+Starting at line 37 of /home/alison/git/codeshine/codeshine/src/codeshine/preferences/CodeAppearancePreferencePage.java
+
+		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(preferenceListener);
+
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
+	 */
+	public void init(IWorkbench workbench) {
+		setPreferenceStore(Activator.getDefault().getPreferenceStore());
+
+	}
+	public boolean performOK(){

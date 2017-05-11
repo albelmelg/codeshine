@@ -178,22 +178,6 @@
             <ruleset>Basic Ecmascript</ruleset>
         </rule>
         <rule>
-            <name>IfStmtsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>IfElseStmtsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>WhileLoopsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>ForLoopsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
             <name>UnnecessaryParentheses</name>
             <ruleset>Unnecessary</ruleset>
         </rule>
@@ -314,22 +298,6 @@
             <ruleset>Basic</ruleset>
         </rule>
         <rule>
-            <name>IfStmtsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>WhileLoopsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>IfElseStmtsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
-            <name>ForLoopsMustUseBraces</name>
-            <ruleset>Braces</ruleset>
-        </rule>
-        <rule>
             <name>ProperCloneImplementation</name>
             <ruleset>Clone Implementation</ruleset>
         </rule>
@@ -358,43 +326,11 @@
             <ruleset>Code Size</ruleset>
         </rule>
         <rule>
-            <name>ExcessiveParameterList</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>ExcessiveClassLength</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
             <name>CyclomaticComplexity</name>
             <ruleset>Code Size</ruleset>
         </rule>
         <rule>
-            <name>StdCyclomaticComplexity</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
             <name>ModifiedCyclomaticComplexity</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>ExcessivePublicCount</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>TooManyFields</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>NcssMethodCount</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>NcssTypeCount</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>NcssConstructorCount</name>
             <ruleset>Code Size</ruleset>
         </rule>
         <rule>
@@ -430,10 +366,6 @@
             <ruleset>Controversial</ruleset>
         </rule>
         <rule>
-            <name>AssignmentInOperand</name>
-            <ruleset>Controversial</ruleset>
-        </rule>
-        <rule>
             <name>AtLeastOneConstructor</name>
             <ruleset>Controversial</ruleset>
         </rule>
@@ -447,10 +379,6 @@
         </rule>
         <rule>
             <name>CallSuperInConstructor</name>
-            <ruleset>Controversial</ruleset>
-        </rule>
-        <rule>
-            <name>UnnecessaryParentheses</name>
             <ruleset>Controversial</ruleset>
         </rule>
         <rule>
@@ -539,10 +467,6 @@
         </rule>
         <rule>
             <name>SwitchStmtsShouldHaveDefault</name>
-            <ruleset>Design</ruleset>
-        </rule>
-        <rule>
-            <name>AvoidDeeplyNestedIfStmts</name>
             <ruleset>Design</ruleset>
         </rule>
         <rule>
@@ -1046,27 +970,11 @@
             <ruleset>Naming</ruleset>
         </rule>
         <rule>
-            <name>VariableNamingConventions</name>
-            <ruleset>Naming</ruleset>
-        </rule>
-        <rule>
-            <name>MethodNamingConventions</name>
-            <ruleset>Naming</ruleset>
-        </rule>
-        <rule>
-            <name>ClassNamingConventions</name>
-            <ruleset>Naming</ruleset>
-        </rule>
-        <rule>
             <name>AbstractNaming</name>
             <ruleset>Naming</ruleset>
         </rule>
         <rule>
             <name>AvoidDollarSigns</name>
-            <ruleset>Naming</ruleset>
-        </rule>
-        <rule>
-            <name>MethodWithSameNameAsEnclosingClass</name>
             <ruleset>Naming</ruleset>
         </rule>
         <rule>
@@ -1382,18 +1290,6 @@
             <ruleset>Basic JSF</ruleset>
         </rule>
         <rule>
-            <name>NPathComplexity</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>ExcessiveMethodLength</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>ExcessiveParameterList</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
             <name>ExcessiveObjectLength</name>
             <ruleset>Code Size</ruleset>
         </rule>
@@ -1410,23 +1306,7 @@
             <ruleset>Code Size</ruleset>
         </rule>
         <rule>
-            <name>CyclomaticComplexity</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>TooManyFields</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>NcssMethodCount</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
             <name>NcssObjectCount</name>
-            <ruleset>Code Size</ruleset>
-        </rule>
-        <rule>
-            <name>TooManyMethods</name>
             <ruleset>Code Size</ruleset>
         </rule>
         <rule>
@@ -1466,23 +1346,7 @@
             <ruleset>Basic VF</ruleset>
         </rule>
         <rule>
-            <name>AvoidDeeplyNestedIfStmts</name>
-            <ruleset>Basic Velocity</ruleset>
-        </rule>
-        <rule>
-            <name>CollapsibleIfStatements</name>
-            <ruleset>Basic Velocity</ruleset>
-        </rule>
-        <rule>
             <name>ExcessiveTemplateLength</name>
-            <ruleset>Basic Velocity</ruleset>
-        </rule>
-        <rule>
-            <name>AvoidReassigningParameters</name>
-            <ruleset>Basic Velocity</ruleset>
-        </rule>
-        <rule>
-            <name>EmptyIfStmt</name>
             <ruleset>Basic Velocity</ruleset>
         </rule>
         <rule>
