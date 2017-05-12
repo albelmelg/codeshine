@@ -175,7 +175,6 @@ public class AudioRecorder
     convert=strPath+"wav2raw";
     // Start iAtros recogniser
     try {
-      // iatros = Runtime.getRuntime().exec("/bin/bash -c "+iatrosOff);
       iatros = Runtime.getRuntime().exec("/bin/bash "+iatrosOff);
     } catch (IOException e) {
       System.exit(-1);
@@ -210,7 +209,6 @@ public class AudioRecorder
     // Convert wav to raw
      out("Converting wav to raw...");
     try {
-      // Process conv = Runtime.getRuntime().exec("/bin/bash -c "+convert);
       Process conv = Runtime.getRuntime().exec("/bin/bash "+convert);
       conv.waitFor();
     } catch (Exception e) {
@@ -221,7 +219,6 @@ public class AudioRecorder
      //Convert raw to CC
      out("Converting raw to CC...");
     try {
-      // Process iatrosEnc = Runtime.getRuntime().exec("/bin/bash -c "+iatrosCeps);
       Process iatrosEnc = Runtime.getRuntime().exec("/bin/bash "+iatrosCeps);
       iatrosEnc.waitFor();
     } catch (Exception e) {
@@ -264,7 +261,6 @@ public class AudioRecorder
 
   private static String processOutput(String src) {
     String dst;
-// out(src);
     dst=src.replaceAll("<sil>","");
     dst=dst.replaceAll("<s>","");
     dst=dst.replaceAll("</s>","");
@@ -309,7 +305,7 @@ public class AudioRecorder
     }
 
     /** Returns the name of the format.  */
-    public String getName() { return m_strName; }
+    //public String getName() { return m_strName; }
 
     /** Returns the encoding of the format.  */
     public AudioFormat.Encoding getEncoding() { return m_encoding; }
@@ -321,15 +317,13 @@ public class AudioRecorder
     public boolean getBigEndian() { return m_bBigEndian; }
   }
 
-  ///////////////////////////////////////////////
 
-  // public static interface Recorder {
   public interface Recorder {
     public void start();
     public void stopRecording();
   }
 
-  // public static class AbstractRecorder extends Thread implements Recorder {
+
   public class AbstractRecorder extends Thread implements Recorder {
     protected TargetDataLine        m_line;
     protected AudioFileFormat.Type  m_targetType;

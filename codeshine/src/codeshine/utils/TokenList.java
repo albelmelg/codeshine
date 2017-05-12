@@ -1,16 +1,16 @@
 package codeshine.utils;
-import java.util.HashSet;
-import org.xml.sax.*;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InvalidObjectException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.List;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.helpers.DefaultHandler;
-import javax.xml.parsers.SAXParserFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-
-
-import org.eclipse.jface.viewers.Viewer;
 
 import codeshine.preferences.IPreferenceConstants;
 
@@ -27,15 +27,14 @@ public class TokenList extends DefaultHandler{
 	public static void main(String[] argv){
 			TokenList tl = null;
 			try{
-				tl = new TokenList("/home/agonzalez/workspace/codeshine/src/codeshine/speech/profile.xml");
+				tl = new TokenList("/git/codeshine/codeshine/src/codeshine/speech");
 			}catch (InvalidObjectException e){e.printStackTrace();}
-			TokenList tl2 = tl;
-			if (tl2.equals(tl))
-				System.out.println("iguales");
-			else 
-				System.out.println("distintos?");
+			//if (tl2.equals(tl))
+				//System.out.println("iguales");
+			//else 
+				//System.out.println("distintos?");
 			
-			System.out.println(tl.toTrie().toString(" "));
+			//System.out.println(tl.toTrie().toString(" "));
 			// Use an instance of ourselves as the SAX event handler   
 	}
 //	Default token constructor

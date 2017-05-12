@@ -26,7 +26,6 @@ import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -72,7 +71,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 						,IPreferenceConstants.BACK_COLOR));
 				System.out.println("Bkground color: " + backgroundColor.toString());
 				codeControl.setBackground(backgroundColor);
-//				codeControl.redraw();
+
 			}
 			if (event
 					.getProperty()
@@ -122,7 +121,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 			  {
 				  int offset = ((ITextSelection)event.getSelection()).getOffset();
 				  System.out.println("Offset: " + offset);
-				  //
+				  
 			  }
 			});
 		makeActions();
@@ -195,12 +194,12 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		viewer.getTextWidget().setMenu(menu);
 		getSite().registerContextMenu(menuMgr, viewer);
 	}
-	private void showMessage(String message) {
+	/*private void showMessage(String message) {
 		MessageDialog.openInformation(
 			viewer.getControl().getShell(),
 			"Sample View",
 			message);
-	}
+	}*/
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
@@ -220,14 +219,14 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		manager.add(speakAction);
 		manager.add(openPreferencesAction);
 	}
-	private void fillContextMenu(IMenuManager manager) {
+	/*private void fillContextMenu(IMenuManager manager) {
 		manager.add(increaseAction);
 		manager.add(decreaseAction);
 		manager.add(recogAction);
 		manager.add(new Separator());
 		manager.add(speakAction);
 		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
-	}
+	*/
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(new Separator());
 		manager.add(increaseAction);

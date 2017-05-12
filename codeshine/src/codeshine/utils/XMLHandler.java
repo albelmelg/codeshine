@@ -1,14 +1,11 @@
 package codeshine.utils;
 
-import java.io.*;
-
-import org.xml.sax.*;
-import org.xml.sax.helpers.DefaultHandler;
-
+import java.io.IOException;
+import java.io.Writer;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import codeshine.utils.Token;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 
 public class XMLHandler extends DefaultHandler {
@@ -22,8 +19,7 @@ public class XMLHandler extends DefaultHandler {
         this.tl = tl;
 		
 	}
-	public void startDocument()
-    throws SAXException
+	public void startDocument() throws SAXException
     {
       
     }

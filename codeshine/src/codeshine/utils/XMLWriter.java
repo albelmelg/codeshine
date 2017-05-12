@@ -1,8 +1,8 @@
 package codeshine.utils;
 
-import org.xml.sax.helpers.DefaultHandler;
-import java.io.*;
-import java.util.Iterator;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Enumeration;
 
 
