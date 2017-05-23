@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  A SAMPLE set of slides  -->
+<profile title="Java profile" author="agonzalez">
+    <token value="/*" replaced="multiline comment" info="comentario de una linea">
+    </token>
+    <token value="/**" replaced="Javadoc string" info="Cadena de documentación">
+    </token>
+    <token value="//" replaced="single line comment" info="Comentario a una linea">
+    </token>	
+    <token value="*/" replaced="End of comment" info="Fin de comentario">
+    </token>
+
+
+</profile>
