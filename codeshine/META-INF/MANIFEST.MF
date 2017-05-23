@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Codeshine Plug-in
+Bundle-SymbolicName: codeshine;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: codeshine.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.jdt.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/cmu_time_awb.jar,
+ lib/cmu_us_kal.jar,
+ lib/cmudict04.jar,
+ lib/cmulex.jar,
+ lib/cmutimelex.jar,
+ lib/en_us.jar,
+ lib/freetts.jar
+Export-Package: codeshine,
+ codeshine.preferences,
+ codeshine.speech,
+ codeshine.views
