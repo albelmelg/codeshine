@@ -3,5 +3,31 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/Client.jar"/>
+	<classpathentry kind="lib" path="lib/cmu_time_awb.jar"/>
+	<classpathentry kind="lib" path="lib/cmu_us_kal.jar"/>
+	<classpathentry kind="lib" path="lib/cmudict04-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/cmudict04.jar"/>
+	<classpathentry kind="lib" path="lib/cmulex.jar"/>
+	<classpathentry kind="lib" path="lib/cmutimelex.jar"/>
+	<classpathentry kind="lib" path="lib/EmacspeakServer.jar"/>
+	<classpathentry kind="lib" path="lib/en_us.jar"/>
+	<classpathentry kind="lib" path="lib/freetts-jsapi10.jar"/>
+	<classpathentry kind="lib" path="lib/freetts.jar"/>
+	<classpathentry kind="lib" path="lib/FreeTTSEmacspeakServer.jar"/>
+	<classpathentry kind="lib" path="lib/FreeTTSHelloWorld.jar"/>
+	<classpathentry kind="lib" path="lib/HelloWorld.jar"/>
+	<classpathentry kind="lib" path="lib/jsapi.jar"/>
+	<classpathentry kind="lib" path="lib/JTime.jar"/>
+	<classpathentry kind="lib" path="lib/MixedVoices.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.core_3.2.3.v_686_R32x.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.ui_3.7.1.r371_v20110824-0800.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jface-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jface.text_3.5.89.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.text_3.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.ui.workbench.texteditor-3.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/Player.jar"/>
+	<classpathentry kind="lib" path="lib/Server.jar"/>
+	<classpathentry kind="lib" path="lib/WebStartClock.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
