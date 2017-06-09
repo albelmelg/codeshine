@@ -58,13 +58,10 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-	 * <p>
-	 * Creates a new <code>TableViewerSorter</code> instance linked to the
-	 * specified <code>Viewer</code>.
-	 * </p>
-	 * 
-	 * @param viewer the <code>Viewer</code> to link this
-	 * <code>TableViewerSorter</code> to
+	 * Crea una nueva instancia de TableViewerSorter enlazada a un especifico 
+	 * Viewer
+	 * @param viewer El Viewer que se enlaza al 
+	 * TableViewerSorter 
 	 */
     public TableViewerSorter(Viewer viewer,
 			ITableContentProvider contentProvider) {
@@ -74,11 +71,11 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-     * <p>
-     * Gets the column index by which the sorting is done.
-     * </p>
      * 
-     * @return the column index by which the sorting is done
+     * Obtiene el indice de la columna para el cual se ha hecho
+     * una clasificacion
+     * 
+     * @return El indice de la columna para el que se ha hecho la clasificacion
      * 
      * @see #getSortingColumn()
      */
@@ -88,11 +85,10 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-     * <p>
-     * Sets the column index by which the sorting is to be done.
-     * </p>
      * 
-     * @param columnIndex the column index by which the sorting is to be done
+     * Establece el índice de columna por el cual se va a realizar la clasificacion.
+
+     * @param columnIndex El indice de la columna por el cual se va a hacer la clasificacion
      * 
      * @see #getSortingColumn()
      */
@@ -102,13 +98,10 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-     * <p>
-     * Gets the sort order; <code>true<Code> indicates ascending,
-     * <code>false</code> descending sort order.
-     * </p>
-     *
-     * @return <code>true<Code> for ascending, <code>false</code> for descending
-     * sort order
+     * 
+     * Devuelve el tipo de ordenacion, True indica ascendente,
+     * False, descendente
+     * @return True para ascendente, False para descendente
      * 
      * @see #setAscending(boolean)
      */
@@ -118,13 +111,10 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-     * <p>
-     * Sets the sort order to be used; <code>true<Code> indicates ascending,
-     * <code>false</code> descending sort order.
-     * </p>
+     * Establece el tipo de ordenacion que se va a usar
+     * True indica ascendente y Falso descendente
      *
-     * @param ascending <code>true<Code> for ascending, <code>false</code> for
-     * descending sort order
+     * @param  True para ascendente, False para descendente
      * 
      * @see #isAscending()
      */
@@ -134,10 +124,8 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-     * <p>
-     * Sorts the underlying model data and refreshes the associated
-     * <code>TableViewer</code> to reflect the new sorting.
-     * </p>
+	Ordena los datos del modelo subyacente y actualiza los datos asociados del
+     * TableViewer para reflejar la nueva clasificación.
      */
     public void sort() {
         this.viewer.refresh();
@@ -145,19 +133,16 @@ public class TableViewerSorter extends ViewerSorter {
 
 
     /**
-	 * <p>
-	 * Returns a negative, zero, or positive number depending on whether the
-	 * first element is less than, equal to, or greater than the second element.
-	 * </p>
+	 * Devuelve un numero negativo, cero o positivo dependiendo de sobre si el
+	 * Primer elemento es menor que, igual o mayor que el segundo elemento.
 	 * 
-	 * @param viewer the viewer
-	 * @param e1 the first element
-	 * @param e2 the second element
+	 * @param viewer El Viewer
+	 * @param e1 El primer elemento
+	 * @param e2 El segundo elemento
 	 * 
-	 * @return a negative number if the first element is less than the second
-	 * element; the value <code>0</code> if the first element is equal to the
-	 * second element; and a positive number if the first element is greater
-	 * than the second element
+	 * @return Un numero negativo si el primer elemento es menor que el segundo;
+	 *  0 si el primer y el segundo elemento son iguales; y un numero positivo si el segundo
+	 *  elemento es mayor al primero.
 	 */
     public int compare(Viewer viewer, Object e1, Object e2) {
     	/* Evaluate element categories first */
