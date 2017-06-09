@@ -36,29 +36,18 @@ import codeshine.utils.TableViewerSorter;
 
 
 /**
- * 
- * Enables sorting facility for Table instances using an
- * arbitrary TableViewerSorter for sorting.
- * 
+ * Permite la facilidad para las instancias de Table usando un
+ * arbitrario TableViewerSorter para ordenar.
  * 
  * @author <a href="mailto:smachhau@users.sourceforge.net">Sebastian Machhausen</a>
  */
 public class TableViewerSorterHandler extends SelectionAdapter {
 
-	/**
-	 * 
-	 * The Table that the TableViewerSorter is
-	 * bound to
-	 *
-	 */
+	//The Table that the TableViewerSorter is bound to
 	private Table table;
-	
-	/**
-	 * 
-	 * The TableViewerSorter to use for sorting
-	 * 
-	 */
-	private TableViewerSorter sorter;
+
+	//The TableViewerSorter a usar para ordenar
+	 private TableViewerSorter sorter;
 
 	
 	/**
@@ -101,10 +90,10 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 
 
 	/**
-	 * <p>
-	 * Sorts the underlying model by the specified column. The sort
-	 * direction is reversed.
-	 * </p>
+	 * 
+	 * Ordena el modelo subyacente por la columna que se le pasa.
+	 * La manera de ordenarlo esta al reves
+	 * 
 	 * 
 	 * @param columnIndex int the index of the column to sort
 	 */
@@ -146,7 +135,7 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	
 	/**
 	 *
-	 * Anula el registrod de todas las TableColumns de este
+	 * Anula el registro de todas las TableColumns de este
 	 * TableViewerSorterHandler
 	 * 
 	 */
