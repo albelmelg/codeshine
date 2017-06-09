@@ -6,7 +6,6 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.ITextSelection;

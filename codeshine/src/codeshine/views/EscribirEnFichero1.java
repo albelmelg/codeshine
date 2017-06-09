@@ -11,14 +11,8 @@ package codeshine.views;
 * @since JDK 1.5 / Eclipse Callisto
 */
 import com.sun.speech.freetts.audio.AudioPlayer;
-//import com.sun.speech.freetts.audio.JavaClipAudioPlayer;
-//import com.sun.speech.freetts.audio.MultiFileAudioPlayer;
 import com.sun.speech.freetts.audio.NullAudioPlayer;
-//import com.sun.speech.freetts.audio.RawFileAudioPlayer;
 import com.sun.speech.freetts.audio.SingleFileAudioPlayer;
-//import java.io.*;
-//import java.net.URL;
-//import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
