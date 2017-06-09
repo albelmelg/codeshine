@@ -36,42 +36,40 @@ import codeshine.utils.TableViewerSorter;
 
 
 /**
- * <p>
- * Enables sorting facility for <code>Table</code> instances using an
- * arbitrary <code>TableViewerSorter</code> for sorting.
- * </p>
+ * 
+ * Enables sorting facility for Table instances using an
+ * arbitrary TableViewerSorter for sorting.
+ * 
  * 
  * @author <a href="mailto:smachhau@users.sourceforge.net">Sebastian Machhausen</a>
  */
 public class TableViewerSorterHandler extends SelectionAdapter {
 
 	/**
-	 * <p>
-	 * The <code>Table</code> that the <code>TableViewerSorter</code> is
+	 * 
+	 * The Table that the TableViewerSorter is
 	 * bound to
-	 * </p>
+	 *
 	 */
 	private Table table;
 	
 	/**
-	 * <p>
-	 * The <code>TableViewerSorter</code> to use for sorting
-	 * </p>
+	 * 
+	 * The TableViewerSorter to use for sorting
+	 * 
 	 */
 	private TableViewerSorter sorter;
 
 	
 	/**
-	 * <p>
-	 * Creates a new <code>TableViewerSorterHandler</code> instance and
-	 * binds it to the specified <code>Table</code> using the given
-	 * <code>TableViewerSorter</code> to sort the model elements.
-	 * </p>
+	 * Crea una nueva instancia de TableViewerSorterHandler y lo enlaza
+	 * en la Table especificada usando el TableViewerSorter que se le pasa
+	 * para ordenar el modelo de elementos
 	 * 
-	 * @param table the <code>Table</code> to bind this
-	 * <code>TableViewerSorterHandler</code> to
-	 * @param sorter the <code>TableViewerSorter</code> to use to
-	 * sort the model elements
+	 * @param table La Table que lo enlaza al
+	 * TableViewerSorterHandler
+	 * @param clasifica el TableViewerSorter para usarlo para ordenar
+	 * el modelo de elementos
 	 */
 	public TableViewerSorterHandler(Table table, TableViewerSorter sorter) {
 		this.table = table;
@@ -81,7 +79,7 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	
 	
 	/**
-	 * <p> Disposes this <code>TableViewerSorterHandler</code>.	 
+	 * Coloca el TableViewerSorterHandler 
 	 */
 	public void dispose() {
 		this.unregisterColumns();
@@ -89,15 +87,12 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	
 	
 	/**
-	 * <p>
-	 * Handles the <code>SelectionEvent</code> being triggered when the
-	 * sorting column and/or order of the <code>Table</code> changes. The
-	 * sorting of the underlying model is done using the selected column to sort
-	 * by. The sort direction is reversed, i.e. from ascending to descending and
-	 * reverse.
-	 * </p>
+	 * Maneja el SelectionEvent que se dispara cuando la columna de clasificacion
+	 * y/o ordena al Table cambiar.
+	 * La clasificacion del modelo subyacente se usa para selecionar la columna a ordenar
+	 * El orden está reservado, por ejemplo, de ascendente a descendente o al contrario.
 	 * 
-	 * @param event Event the <code>SelectionEvent</code> triggered
+	 * @param event El evento SelectionEvent que se dispara
 	 */
 	public void widgetSelected(SelectionEvent event) {		
 		int columnIndex = this.table.indexOf((TableColumn) event.widget);
@@ -119,13 +114,11 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 
 
 	/**
-	 * <p>
-	 * Sorts the underlying model by the specified <code>columnIndex</code>.
-	 * </p>
+	 *
+	 * Ordena el modelo subyacente por la especifica columnIndex
 	 * 
-	 * @param columnIndex int the index of the column to sort
-	 * @param ascending <code>true</code> for ascending, <code>false</code>
-	 * for descending sort order
+	 * @param columnIndex El numero de la columna a ordenar.
+	 * @param True para ascendente, False para descendente.
 	 */
 	public void sort(int columnIndex, boolean ascending) {
 		this.sorter.setSortingColumn(columnIndex);
@@ -139,12 +132,9 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	
 	
 	/**
-	 * <p>
-	 * Registers all <code>TableColumns</code> to sort on header single mouse
-	 * click. Each single mouse click on the same
-	 * <code> <code>TableColumns</code>
-	 * reverses the sort order.
-	 * </p>
+	 * Registra todas las TableColumns a ordenar en la cabecera de un solo click
+	 * Cada click en el mismo TableColumns invierte el orden.
+	 *
 	 */
 	private void registerColumns() {
 		TableColumn[] columns = this.table.getColumns();
@@ -155,10 +145,10 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	
 	
 	/**
-	 * <p>
-	 * Unregisters all <code>TableColumns</code> from this
-	 * <code>TableViewerSorterHandler</code>.
-	 * </p>
+	 *
+	 * Anula el registrod de todas las TableColumns de este
+	 * TableViewerSorterHandler
+	 * 
 	 */
 	private void unregisterColumns() {
 		TableColumn[] columns = this.table.getColumns();
