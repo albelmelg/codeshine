@@ -1,6 +1,5 @@
 package codeshine.utils;
 
-import java.io.IOException;
 import java.io.Writer;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
@@ -58,38 +57,6 @@ public class XMLHandler extends DefaultHandler {
             tl.addToken(t);
         }
 
-    }
-
-    public void endElement(String namespaceURI,
-                           String sName, // simple name
-                           String qName  // qualified name
-                          )
-    throws SAXException
-    {
-        
-    }
-
-    public void characters(char buf[], int offset, int len)
-    throws SAXException
-    {
-        
-    }
-
-    //===========================================================
-    // Utility Methods ...
-    //===========================================================
-
-    // Wrap I/O exceptions in SAX exceptions, to
-    // suit handler signature requirements
-    private void emit(String s)
-    throws SAXException
-    {
-        try {
-            out.write(s);
-            out.flush();
-        } catch (IOException e) {
-            throw new SAXException("I/O error", e);
-        }
     }
 
 }

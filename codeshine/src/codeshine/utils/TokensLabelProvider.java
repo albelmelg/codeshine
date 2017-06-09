@@ -8,11 +8,11 @@ public class TokensLabelProvider extends LabelProvider implements
 		ITableLabelProvider {
 
 	public TokensLabelProvider() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		// TODO Auto-generated method stub
+
 		return null;
 
 	

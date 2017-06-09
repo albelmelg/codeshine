@@ -1,5 +1,8 @@
 package codeshine.utils;
-
+/**
+ * Se establecen los metodos necesarios para poder usar los objetos de tipo Token
+ *
+ */
 public class Token {
 	private String value;
 	private String replacement;

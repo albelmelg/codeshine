@@ -15,6 +15,12 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import codeshine.preferences.IPreferenceConstants;
 
+/**
+ * Clase que permite el funcionamiento de objetos de tipo Token 
+ * para manejar eventos de tipo DefaultHandler
+ *
+ */
+
 public class TokenList extends DefaultHandler{
 	private static Logger logger = Logger.getLogger(TokenList.class);
 	String[][] configData = {{"/**", "Javadoc string", "Cadena de documentación"},

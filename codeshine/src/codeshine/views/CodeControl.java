@@ -93,7 +93,7 @@ public class CodeControl implements MouseListener{
 		    });
 		// Adding move and resize listeners
 		styledText.addControlListener(new ControlListener(){
-			//TODO: Capture scroll event
+			
 			public void controlMoved(ControlEvent e){
 				System.out.println("Capturado evento controlMoved");
 			}
@@ -101,8 +101,7 @@ public class CodeControl implements MouseListener{
 				System.out.println("Capturado evento controlResized");
 			}
 		});
-		
-		// TODO Auto-generated constructor stub
+
 	}
 	public Display getDisplay(){
 		return styledText.getDisplay();
@@ -162,13 +161,12 @@ public class CodeControl implements MouseListener{
 	    	
 	   
 		} catch (java.net.MalformedURLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("Estoy escribiendo en el fichero");
 			e.printStackTrace();
 		}
 	
  catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		
