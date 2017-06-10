@@ -17,7 +17,7 @@ import codeshine.preferences.IPreferenceConstants;
 
 /**
  * Clase que permite el funcionamiento de objetos de tipo Token 
- * para manejar eventos de tipo DefaultHandler
+ * para manejar eventos de tipo DefaultHandler en listas
  *
  */
 
@@ -28,8 +28,8 @@ public class TokenList extends DefaultHandler{
 			{"/*", "multiline comment", "Comentario de varias lineas"},
 			{"*/", "end of comment", "fin de comentario"}};
 
-	final List list = new ArrayList();
-	final Hashtable table = new Hashtable();
+	final List<Token> list = new ArrayList<Token>();
+	final Hashtable<String, Token> table = new Hashtable<String, Token>();
 	/**
 	 * Crea una lista tokenlist
 	 * @param argv Los argumentos que recibe el método
@@ -120,7 +120,7 @@ public class TokenList extends DefaultHandler{
 	 */
 	public String toString(){
 		String value = "";
-		Enumeration elems = table.elements();
+		Enumeration<Token> elems = table.elements();
 		while (elems.hasMoreElements())
 			value += elems.nextElement().toString();
 		return value;
@@ -154,7 +154,7 @@ public class TokenList extends DefaultHandler{
 	 */
 	public Trie toTrie(){
 		Trie ret = new Trie();
-		Enumeration elems = table.elements();
+		Enumeration<Token> elems = table.elements();
 		while (elems.hasMoreElements())
 			ret.addToken(elems.nextElement());
 		return ret;
@@ -163,14 +163,14 @@ public class TokenList extends DefaultHandler{
 	 * Indica el numero de elementos en un Hashtable
 	 * @return Devuelve un int con el numero de elementos en el hastable
 	 */
-	public Enumeration getElements(){
+	public Enumeration<Token> getElements(){
 		return this.table.elements();	
 	}
 	/**
 	 * Devuelve una coleccion de objetos de tipo HashTable
 	 * @return La coleccion de objetos Hashatble
 	 */
-	public Hashtable getCollection(){
+	public Hashtable<String, Token> getCollection(){
 		return this.table;
 	}
 	/**
@@ -182,8 +182,8 @@ public class TokenList extends DefaultHandler{
 		try{
 			if (((TokenList)obj).length() != this.length())
 				ret = false;
-			Hashtable enumCmp = (Hashtable)((TokenList)obj).getCollection();
-			Enumeration keys = this.table.keys();
+			Hashtable<String, Token> enumCmp = (Hashtable<String, Token>)((TokenList)obj).getCollection();
+			Enumeration<String> keys = this.table.keys();
 			while (keys.hasMoreElements() && ret){
 				Object key = keys.nextElement();
 				ret = ret && enumCmp.containsKey(key) && enumCmp.get(key).equals(this.table.get(key));

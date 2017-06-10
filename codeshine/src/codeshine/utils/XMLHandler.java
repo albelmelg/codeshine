@@ -18,16 +18,6 @@ public class XMLHandler extends DefaultHandler {
         this.tl = tl;
 		
 	}
-	public void startDocument() throws SAXException
-    {
-      
-    }
-
-    public void endDocument()
-    throws SAXException
-    {
-      
-    }
 
     public void startElement(String namespaceURI,
                              String lName, // local name
