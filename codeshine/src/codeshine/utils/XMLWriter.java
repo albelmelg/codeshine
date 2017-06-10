@@ -9,15 +9,23 @@ import java.util.Enumeration;
 public class XMLWriter {
 
 	private BufferedWriter out;
-	private Enumeration elements; 
+	private Enumeration<?> elements; 
+	/**
+	 * Constructor
+	 * @param content Objetos enumeration
+	 * @param filePath El nombre del filepath
+	 * @throws IOException
+	 */
 	
-	
-	public XMLWriter(Enumeration content, String filePath) throws IOException{
+	public XMLWriter(Enumeration<?> content, String filePath) throws IOException{
 		this.elements = content;
 		try{
 			out = new BufferedWriter(new FileWriter(filePath));
 		}catch (IOException ioexception){throw (ioexception);}
 	}
+	/**
+	 * Metodo que escribe los documentos XML
+	 */
 	
 	public void writeFile(){
 		try{
