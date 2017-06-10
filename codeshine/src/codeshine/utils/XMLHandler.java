@@ -12,12 +12,26 @@ public class XMLHandler extends DefaultHandler {
 	static public Writer out;
 	SAXParserFactory factory;
 	private TokenList tl;
-		
+	/**
+	 * Constructor
+	 * @param tl la TokenList
+	 */
 	public XMLHandler(TokenList tl){
 		
         this.tl = tl;
 		
 	}
+	/**
+	 * Recibe una notificacion de que un elemento se está ejecutando.
+	 * Por defecto no hace nada.
+	 * 
+	 * @param namespaceURI El Namespace URI, o un String vacio si no hay un namespaceURI
+	 * @param lName Nombre local (sin prefijo) o un String vacio si no se ha formado
+	 * @param qName Nombre 'qualified' (con prefijo) o un Strin vacio si no se ha formado
+	 * @param attrs Los atributos unidos al elemento. Si no hay atributos sera un objeto vacio
+	 * @see ContentHandler.startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+	 * @throws SAXException
+	 */
 
     public void startElement(String namespaceURI,
                              String lName, // local name
