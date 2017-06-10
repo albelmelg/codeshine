@@ -29,7 +29,7 @@ import org.eclipse.jface.viewers.ViewerSorter;
 /**
  * Extension generica de ViewerSorte para Viewer
  * las instancias usan implementaciones de ITableContentProvider .
- * @deprecation el extends ViewerSorter ya no está en uso
+ * @deprecated El extends ViewerSorter ya no está en uso
  * 
  * @author <a href="mailto:smachhau@users.sourceforge.net">Sebastian Machhausen</a>
  */
@@ -61,7 +61,9 @@ public class TableViewerSorter extends ViewerSorter {
 	 * Crea una nueva instancia de TableViewerSorter enlazada a un especifico 
 	 * Viewer
 	 * @param viewer El Viewer que se enlaza al 
-	 * TableViewerSorter 
+	 * TableViewerSorter
+	 * @param contentProvider Contenido proporcionado
+	 * @deprecated 
 	 */
     public TableViewerSorter(Viewer viewer,
 			ITableContentProvider contentProvider) {
@@ -114,7 +116,7 @@ public class TableViewerSorter extends ViewerSorter {
      * Establece el tipo de ordenacion que se va a usar
      * True indica ascendente y Falso descendente
      *
-     * @param  True para ascendente, False para descendente
+     * @param ascending True para ascendente, False para descendente
      * 
      * @see #isAscending()
      */

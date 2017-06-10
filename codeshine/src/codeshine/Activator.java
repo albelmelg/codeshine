@@ -29,7 +29,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Se inicia la comunicacion para que el plugin pueda realizar sus actividades.
 	 * Throws java.lang.exception
-	 * @param Context es un objeto que se usa para poder interactuar con el Framework
+	 * @param context es un objeto que se usa para poder interactuar con el Framework
 	 */
 	public void start(final BundleContext context) throws Exception {
 		super.start(context);
@@ -40,7 +40,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Detiene la ejecución del bundle y a ejecución del plugin debe detenerse.
 	 *  Throws java.lang.exception
-	 * @param Context es un objeto que se usa para poder interactuar con el Framework
+	 * @param context es un objeto que se usa para poder interactuar con el Framework
 	 */
 	public void stop(final BundleContext context)throws Exception {
 		super.stop(context);
@@ -61,7 +61,7 @@ public class Activator extends AbstractUIPlugin {
 	 * Crea y devuelve un nuevo ImageDescriptor para un
 	 *  archivo de imagen ubicado dentro del plugin especificado.
 	 *
-	 * @param El path del plugin
+	 * @param path El path del plugin
 	 * @return Un ImageDescriptor, o null si no se ha encontrado ninguna imagen.
 	 */
 	public static ImageDescriptor getImageDescriptor(final String path) {

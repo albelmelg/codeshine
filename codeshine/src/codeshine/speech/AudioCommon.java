@@ -35,7 +35,7 @@ public class AudioCommon
 
 	/**
 	 * Modifica el nombre de debug
-	 * @param bDebug
+	 * @param bDebug boolean
 	 */
 	public static void setDebug(final boolean bDebug)
 	{
@@ -102,6 +102,7 @@ public class AudioCommon
 		Solo los mixers que soportan TargetDataLines or SourceDataLines
 		se añaden a la lista dependiendo del valor de bPlayback.
 		Si no encuentra nada sale de la ejecución. 
+		@param bPlayback True o False
 	**/
 	public static void listMixersAndExit(final boolean bPlayback)
 	{
@@ -159,12 +160,11 @@ public class AudioCommon
 	 * para que la Linea sepa el formato de dato que le pasaremos.
 	 * Java Sound establecerá un tamaño del buffer por defecto.
 	 * 
-	 * @param strMixerName - define el nombre del Mixer
-	 * @param audioformat - objeto de tipo AudioFormat
-	 * @param nBufferSize - tamaño del buffer
-	 * 
+	 * @param strMixerName Define el nombre del Mixer
+	 * @param audioFormat Objeto de tipo AudioFormat
+	 * @param nBufferSize Tamaño del buffer
+	 * @return null o el objeto TargetDataLine
 	 */
-
 	public static TargetDataLine getTargetDataLine(String strMixerName,
 							final AudioFormat audioFormat,
 							final int nBufferSize)
@@ -214,6 +214,7 @@ public class AudioCommon
 
 
 	/** Verifica si la codificació es PCM
+	 * @param encoding La codificacion
 	 * @return True o False
 	 */
 	public static boolean isPcm(AudioFormat.Encoding encoding)

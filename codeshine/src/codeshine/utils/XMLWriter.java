@@ -14,8 +14,8 @@ public class XMLWriter {
 	 * Constructor
 	 * @param content Objetos enumeration
 	 * @param filePath El nombre del filepath
-	 * @throws IOException
-	 */
+	 * @throws IOException excepcion de E/S
+	 **/
 	
 	public XMLWriter(Enumeration<?> content, String filePath) throws IOException{
 		this.elements = content;

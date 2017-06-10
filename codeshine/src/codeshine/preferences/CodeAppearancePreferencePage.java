@@ -47,7 +47,9 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 	}
 	
 	/** Constructor, creará un objeto de tipo Field Editor Preference Page
-	 * @param String title, ImageDescriptor image, int style
+	 * @param title el titulo
+	 * @param image la imagen
+	 * @param style tipo de estilo
 	 * */
 		
 	public CodeAppearancePreferencePage(String title, final ImageDescriptor image,final int style) {
@@ -55,7 +57,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 	}
 
 	/** Inicializa a página de preferencias para el espacio de trabajo (workbench)
-	 * @param Iworkbench workbench - el espacio de trabajo
+	 * @param workbench - el espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(final IWorkbench workbench) {

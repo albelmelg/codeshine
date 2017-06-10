@@ -217,7 +217,7 @@ public class Trie {
 	 * Si la lista tiene un solo elemento lo devuelve. Si llega al final, también.
 	 * En caso de que haya mas elementos en la lista los va analizando hasta que se den los casos anteriores. 
 	 * @param input El array de objetos tipo Char
-	 * @param current 
+	 * @param current  un numero
 	 * @return El objeto token, 
 	 * si el metodo se ha ejecutado bien tendra valor, si no, devolvera null
 	 */

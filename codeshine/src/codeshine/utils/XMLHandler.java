@@ -29,8 +29,7 @@ public class XMLHandler extends DefaultHandler {
 	 * @param lName Nombre local (sin prefijo) o un String vacio si no se ha formado
 	 * @param qName Nombre 'qualified' (con prefijo) o un Strin vacio si no se ha formado
 	 * @param attrs Los atributos unidos al elemento. Si no hay atributos sera un objeto vacio
-	 * @see ContentHandler.startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
-	 * @throws SAXException
+	 * @throws SAXException cualquier excepcion de tipo SAX
 	 */
 
     public void startElement(String namespaceURI,

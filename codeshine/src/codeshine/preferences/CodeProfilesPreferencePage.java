@@ -136,7 +136,7 @@ public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
 	}
 
 	/** Inicializa a página de preferencias para el espacio de trabajo (workbench)
-	 * @param Iworkbench workbench - el espacio de trabajo
+	 * @param workbench - el espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(final IWorkbench workbench) {

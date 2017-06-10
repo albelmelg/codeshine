@@ -187,7 +187,7 @@ public class AudioRecorder
  * Empieza el reconociemiento de voz, el audio que graba
  *  pasa por diversas conversiones hasta que se convierte en un String
  * @return Una cadena String donde se refleja lo que le hemos dicho al reconocedor
- * @Throws Exception
+ * @throws Exception Captura cualquier excepcion
  */
   public String performRecognition() {
     boolean ok=true;
@@ -233,7 +233,6 @@ public class AudioRecorder
 /**
  * Cuando hemos terminado de hablar, pulsamos el botón
  * otra vez y se ejecuta éste método, el de terminar de ejectarse el reconocedor.
- * @throws Exception
  */
   public void terminateRecogniser() {
     // Terminar iATROS

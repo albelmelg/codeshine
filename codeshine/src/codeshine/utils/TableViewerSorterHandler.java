@@ -57,7 +57,7 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	 * 
 	 * @param table La Table que lo enlaza al
 	 * TableViewerSorterHandler
-	 * @param clasifica el TableViewerSorter para usarlo para ordenar
+	 * @param sorter clasifica el TableViewerSorter para usarlo para ordenar
 	 * el modelo de elementos
 	 */
 	public TableViewerSorterHandler(Table table, TableViewerSorter sorter) {
@@ -107,7 +107,7 @@ public class TableViewerSorterHandler extends SelectionAdapter {
 	 * Ordena el modelo subyacente por la especifica columnIndex
 	 * 
 	 * @param columnIndex El numero de la columna a ordenar.
-	 * @param True para ascendente, False para descendente.
+	 * @param ascending True para ascendente, False para descendente.
 	 */
 	public void sort(int columnIndex, boolean ascending) {
 		this.sorter.setSortingColumn(columnIndex);

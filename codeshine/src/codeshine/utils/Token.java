@@ -18,9 +18,9 @@ public class Token {
 	}
 /**
  * Constructor de objeto token
- * @param value
- * @param replacement
- * @param info
+ * @param value String
+ * @param replacement String
+ * @param info String
  */
 	public Token(String value, String replacement, String info){
 		this.value = value;

@@ -59,7 +59,7 @@ public class TokenList extends DefaultHandler{
 	 * como XML utilizando el archivo org.xml.sax.helpers.DefaultHandler.
 	 * 
 	 * @param fInput Un objeto de tipo File
-	 * @throws InvalidObjectException
+	 * @throws InvalidObjectException si se genera un objeto invalido
 	 */
 	public TokenList(File fInput) throws InvalidObjectException{
 		DefaultHandler handler = new XMLHandler(this);
@@ -77,7 +77,7 @@ public class TokenList extends DefaultHandler{
 	/**
 	 * Crea un objeto de tipo File dado un pathfile
 	 * @param configFile el pathfile
-	 * @throws InvalidObjectException
+	 * @throws InvalidObjectException si se genera un objeto invalido
 	 */
 	
 	public TokenList(String configFile) throws InvalidObjectException{
@@ -149,8 +149,8 @@ public class TokenList extends DefaultHandler{
 		return null;
 	}
 	/**
-	 * 
-	 * @return
+	 * Añade elementos a la lista
+	 * @return El objeto Trie
 	 */
 	public Trie toTrie(){
 		Trie ret = new Trie();

@@ -28,7 +28,7 @@ public class ProfileConfigProvider extends ArrayContentProvider implements
      * Devuelve el valor de la columna para 
      * el índice especificado 
      * 
-     * @param Element,el objeto elemento para el cual consulta el valor de la columna
+     * @param element el objeto elemento para el cual consulta el valor de la columna
      * @param columnIndex el índice del valor de la columna que queremos consultar.
      * 
      * @return el valor del elemento
@@ -64,10 +64,9 @@ public class ProfileConfigProvider extends ArrayContentProvider implements
 	/**
 	 * Notifica que el contenido que proviene del
 	 * viewer ha cambiado a un elemento diferente
-	 *@param Viewer  El visor
+	 *@param viewer  El visor
 	 *@param oldInput  Elemento antiguo
 	 *@param newInput  Elemento nuevo
-	 *@throws NullPoinerException
 	 *
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput){
