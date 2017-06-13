@@ -78,7 +78,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
     private String[] columnHeaders;
     
     // The Table sorter 
-    private TableViewerSorter sorter;
+    @SuppressWarnings("deprecation")
+	private TableViewerSorter sorter;
 
 	//The handler used to sort the underlying IStructuredContentProvider</code>
     private TableViewerSorterHandler sorterHandler;
@@ -202,7 +203,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 
 	 * @see #isSortingEnabled()
 	 */
-    public void setSortingEnabled(boolean enabled) {
+    @SuppressWarnings("deprecation")
+	public void setSortingEnabled(boolean enabled) {
     	if (this.contentProvider instanceof ITableContentProvider) {
     		if (enabled) {
 	    		this.sorter = new TableViewerSorter(this.viewer,
@@ -257,7 +259,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 	 * @see #isSortAscending()
 	 * @see #sort(int, boolean)
 	 */
-    public int getSortingColumn() {
+    @SuppressWarnings("deprecation")
+	public int getSortingColumn() {
     	if (this.isSortingEnabled()) {
     		return this.sorter.getSortingColumn();
     	} else {
@@ -278,7 +281,8 @@ public class TableFieldEditor extends FieldEditor implements Accessible{
 	 * @see #getSortingColumn()
 	 * @see #sort(int, boolean)
 	 */
-    public boolean isSortAscending() {
+    @SuppressWarnings("deprecation")
+	public boolean isSortAscending() {
     	if (this.isSortingEnabled()) {
     		return this.sorter.isAscending();
     	} else {
