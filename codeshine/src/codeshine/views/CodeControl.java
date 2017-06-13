@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
@@ -37,7 +38,12 @@ public class CodeControl implements MouseListener{
 	private Color highlightColor;
 	private Color backgroundColor;
 	private Color foregroundColor;
+	static Logger logger = Logger.getLogger(CodeControl.class);
 	
+	/**
+	 * Constructor
+	 * @param st Es un atributo de tipo StyledText que permite definir la fuente, color del fondo entre otros.
+	 */
 	public CodeControl(StyledText st) {
 		styledText = st;
 
@@ -59,6 +65,10 @@ public class CodeControl implements MouseListener{
 		styledText.addMouseListener(this);
 		
 		styledText.addKeyListener(new KeyAdapter() {
+			
+			/**
+			 * Metodo que registra cuando se ha pulsado una tecla.
+			 */
 		      public void keyPressed(KeyEvent e){
 	
 		    	  updatePosition(styledText.getCaretOffset());
@@ -73,7 +83,6 @@ public class CodeControl implements MouseListener{
 		    	  		break;
 		    	  case (int)116://Ctrl + t
 		    		if ((e.stateMask & SWT.CTRL) != 0){
-		    			//System.out.println("Capturado activador de sonido");
 		    			speaker();}
 		    			break;
 		    	  case (int)112://Ctrl + p
@@ -87,49 +96,78 @@ public class CodeControl implements MouseListener{
 		    		  }
 		    	  	  break;
 		    	  default:
-		    		System.out.print("");
+		    		logger.info("");
 		    	  }
 		      }
 		    });
 		// Adding move and resize listeners
 		styledText.addControlListener(new ControlListener(){
-			
+			/**
+			 * Metodo que indica cuando se mueve la ventana
+			 */
 			public void controlMoved(ControlEvent e){
-				System.out.println("Capturado evento controlMoved");
+				logger.info("Capturado evento controlMoved");
 			}
+			/**
+			 * Metodo que indica cuando se redimensiona la ventana
+			 */
 			public void controlResized(ControlEvent e) {
-				System.out.println("Capturado evento controlResized");
+				logger.info("Capturado evento controlResized");
 			}
 		});
 
 	}
+	/**
+	 * Devuelve el display (pantalla) a la que esta asociado
+	 * @return El display
+	 */
 	public Display getDisplay(){
 		return styledText.getDisplay();
 	}
+	/**
+	 * Establece un color de fondo
+	 * @param backgroundColor El nuevo color de fondo
+	 */
+	
 	public void setBackground(Color backgroundColor){
 		this.backgroundColor = backgroundColor;
 		this.styledText.setBackground(backgroundColor);
 		this.styledText.redraw();
 	}
+	/**
+	 * Establece un color para el texto
+	 * @param foregroundColor El nuevo color para el texto
+	 */
 	public void setForeground(Color foregroundColor){
 		this.styledText.setForeground(foregroundColor);
 	}
+	/**
+	 * Establece un nuevo color para el resaltado "Color hightlight"
+	 * @param hightlight El nuevo color para el resaltado
+	 */
 	public void setHighLight(Color hightlight){
 		this.highlightColor = hightlight;
 		this.styledText.setLineBackground(styledText.getCaretOffset(), 1, this.highlightColor);
 		this.styledText.redraw();
 
 	}
+	/**
+	 * Establece una nueva fuente
+	 * @param newFont
+	 */
 	public void setFont(Font newFont){
 		this.styledText.setFont(newFont);
 		this.redraw();
 	}
+	/**
+	 * 
+	 */
 	public void redraw(){
 		this.styledText.redraw();
 	}
 	
 	protected void speaker(){
-		System.out.println("evento de habla capturado");
+		logger.info("evento de habla capturado");
 		String text = styledText.getSelectionText();
 		/**
 		 * If no selected text. play current line.
@@ -151,7 +189,6 @@ public class CodeControl implements MouseListener{
 			File file = new File("/tmp/sinte.wav");
 			EscribirEnFichero1 voz = new EscribirEnFichero1("kevin16");
 			System.out.println("Hola "+file.getName());
-			//voz.toFile(file.getName(), text);
 			voz.toFile("/tmp/sinte.wav", text);
 			voz.close();
 			
@@ -193,7 +230,7 @@ public class CodeControl implements MouseListener{
 	
 	protected void recognitionIatros() throws IOException, InterruptedException{
 		
-		System.out.println("DENTRO DEL RECONOCEDOR");
+		logger.info("DENTRO DEL RECONOCEDOR");
 		File archivo;
 		
 		//Espero a que termine y lo vuelco por pantalla una vez leido el fichero.txt
@@ -208,10 +245,12 @@ public class CodeControl implements MouseListener{
 				linea = br.readLine();
 				styledText.insert(linea+"\n");
 
-		System.out.println("DENTRO DEL RECONOCEDOR2au");
+				logger.info("DENTRO DEL RECONOCEDOR2au");
 	 }
 	
-	
+	/**
+	 * Metodo que ejecuta las preferencias del menu action
+	 */
 	public void launchPreferences(){
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
@@ -221,8 +260,12 @@ public class CodeControl implements MouseListener{
 		openPreferencesAction.setImageDescriptor(Activator.getImageDescriptor("icons/preferences-system.gif"));
 		openPreferencesAction.run();
 	}
+	
+	/**
+	 * Metodo que ejecuta la opcion "Buscar"
+	 */
 	public void launchFind(){
-		System.out.println("__");
+		logger.info("__");
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchWindow win = wb.getActiveWorkbenchWindow();
 		ActionFactory.IWorkbenchAction openFindAction = ActionFactory.FIND.create(win);
@@ -250,20 +293,29 @@ public class CodeControl implements MouseListener{
 		  abseditor.setHighlightRange(offset, 5, true);
 
 		}
+	/**
+	 * Metodo que informa de un evento de que el raton se ha movido hacia abajo
+	 */
 	public void mouseDown(MouseEvent e) {
 
 		if (e.button ==1){
 			updatePosition(styledText.getOffsetAtLocation(new Point(e.x, e.y)));
 		}
-		System.out.println("Mouse event: " + e.toString());
+		logger.info("Mouse event: " + e.toString());
 	}
+	/**
+	 * Metodo que informa de un evento de doble click en el raton
+	 */
 	public void mouseDoubleClick(MouseEvent e) {
 
-		System.out.println("Mouse event: " + e.toString());
+		logger.info("Mouse event: " + e.toString());
 	}
+	/**
+	 * Metodo que informa de un evento de que el raton se ha movido hacia arriba
+	 */
 	public void mouseUp(MouseEvent e) {
 
-		System.out.println("Mouse event: " + e.toString());
+		logger.info("Mouse event: " + e.toString());
 	}
 	
 
