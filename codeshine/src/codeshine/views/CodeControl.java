@@ -32,6 +32,9 @@ import org.eclipse.ui.texteditor.AbstractTextEditor;
 import codeshine.Activator;
 import codeshine.preferences.IPreferenceConstants;
 
+/**
+ *Clase que implementa los metodos necesarios para el funcionamiento de la vista
+ */
 public class CodeControl implements MouseListener{
 	protected final StyledText styledText;
 	private int STLastOffset;
