@@ -1,5 +1,6 @@
 package codeshine.views;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
@@ -35,12 +36,15 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
-
 import codeshine.Activator;
 import codeshine.preferences.IPreferenceConstants;
 import codeshine.speech.AudioRecorder;
+/**
+ * Clase que implementa los métodos necesarios para la interfaz
+ *
+ */
 
-
+@SuppressWarnings("restriction")
 public class CodeView extends ViewPart implements ISelectionListener {
 	private SourceViewer viewer;
 	private Action speakAction;
@@ -48,7 +52,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	private Action decreaseAction;
 	private Action recogAction;
 	private ActionFactory.IWorkbenchAction openPreferencesAction;
-
+	static Logger logger = Logger.getLogger(CodeView.class);
 	private CodeControl codeControl;
 	private Color backgroundColor;
 	private Color foregroundColor;
@@ -60,6 +64,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	
 	IPropertyChangeListener preferenceListener = 
 		new IPropertyChangeListener(){
+
 		public void propertyChange(PropertyChangeEvent event) {
 			if (event
 					.getProperty()
@@ -68,7 +73,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 				backgroundColor = new Color(codeControl.getDisplay()
 						,PreferenceConverter.getColor(Activator.getDefault().getPreferenceStore()
 						,IPreferenceConstants.BACK_COLOR));
-				System.out.println("Bkground color: " + backgroundColor.toString());
+				logger.info("Bkground color: " + backgroundColor.toString());
 				codeControl.setBackground(backgroundColor);
 
 			}
@@ -80,11 +85,11 @@ public class CodeView extends ViewPart implements ISelectionListener {
 						,IPreferenceConstants.FONT_COLOR));
 				codeControl.setForeground(foregroundColor);}
 			if (event.getProperty().equals(IPreferenceConstants.HIGHTLIGHT)){
-				System.out.println("Cambio en preferencias");
+				logger.info("Cambio en preferencias");
 				highlightColor = new Color(codeControl.getDisplay(),
 						PreferenceConverter.getColor(Activator.getDefault().getPreferenceStore(),
 								IPreferenceConstants.HIGHTLIGHT));
-				System.out.println(highlightColor.toString());
+				logger.info(highlightColor.toString());
 				codeControl.setHighLight(highlightColor); 
 			}
 			if (event
@@ -95,18 +100,18 @@ public class CodeView extends ViewPart implements ISelectionListener {
 						, IPreferenceConstants.FONT_TYPE));
 				codeControl.setFont(newFont);}	
 			else{
-				System.out.println("codeview_" + event.getProperty());
+				logger.info("codeview_" + event.getProperty());
 			}
 		}
 	};
 	/**
-	 * The constructor.
+	 * El constructor.
 	 */
 	public CodeView() {
 	}
 	/**
-	 * This is a callback that will allow us
-	 * to create the viewer and initialize it.
+	 * Esto es un callback que nos permitirá crear el viewer e inicializarlo
+	 * 
 	 */
 	public void createPartControl(Composite parent) {
 	
@@ -116,10 +121,11 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		viewer.setDocument(new Document());
 		viewer.addSelectionChangedListener(new ISelectionChangedListener()
 		{
+
 			  public void selectionChanged(SelectionChangedEvent event)
 			  {
 				  int offset = ((ITextSelection)event.getSelection()).getOffset();
-				  System.out.println("Offset: " + offset);
+				  logger.info("Offset: " + offset);
 				  
 			  }
 			});
@@ -128,11 +134,22 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		fillTextWidget();
 		contributeToActionBars();
 	}
+	/**
+	 * Se guarda el texto que hay en un widget
+	 */
 	public void fillTextWidget(){
 		IWorkbenchPage page = getSite().getPage();
 		page.addSelectionListener(this);
 		codeControl = new CodeControl(viewer.getTextWidget());
 	}
+	/**
+	 * Notifica al listener cuando se ha cambiado la seleccion
+	 * Este método se llama cuando la selección cambia de uno a un valor no null,
+	 * pero no cuando la selección cambia a null. 
+	 * @param part El espacio de trabajo
+	 * @param selection La seleccion
+	 * 
+	 */
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
 		if (selection instanceof org.eclipse.jface.viewers.TreeSelection){
@@ -141,11 +158,11 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		}
 		
 		if (part instanceof PackageExplorerPart){
-			System.out.println("Selection: " + selection.toString());	
-			System.out.println("contentDescription: " + ((PackageExplorerPart)part).getContentDescription());
+			logger.info("Selection: " + selection.toString());	
+			logger.info("contentDescription: " + ((PackageExplorerPart)part).getContentDescription());
 		}
 		else if (part instanceof AbstractTextEditor){
-			System.out.println(part.getClass().toString());
+			logger.info(part.getClass().toString());
 			ITextEditor editor = (ITextEditor)part;
 
 			IDocumentProvider dp = editor.getDocumentProvider();
@@ -153,7 +170,6 @@ public class CodeView extends ViewPart implements ISelectionListener {
 			{
 				  public void selectionChanged(SelectionChangedEvent event){
 					  int offset = ((ITextSelection)event.getSelection()).getOffset();
-					  //int length = ((ITextSelection)event.getSelection()).getLength();
 					  codeControl.updatePosition(offset);
 				  }
 				});
@@ -162,12 +178,12 @@ public class CodeView extends ViewPart implements ISelectionListener {
 			viewer.setDocument(doc2);
 			viewer.setData(getTitle(), "holaaaaa");
 			codeControl.updatePosition(select.getOffset());
-			System.out.println("Imprimidoooooooo "+select.getOffset());
-			System.out.println("Selección cambiada...evento capturado");
+			logger.info("Imprimiendo "+select.getOffset());
+			logger.info("Selección cambiada...evento capturado");
 		}
 		else{
-//			System.out.println("debug: " + part.getTitle());
-			System.out.println("debug_class: " + part.getClass());
+
+			logger.info("debug_class: " + part.getClass());
 		}
 		
 	}
@@ -177,11 +193,15 @@ public class CodeView extends ViewPart implements ISelectionListener {
 			sEvents = Activator.getDefault().getPreferenceStore().getBoolean(IPreferenceConstants.SOUND_EVENTS);
 		}catch (Exception e){e.printStackTrace();}
 		if (sEvents){
-			System.out.println("notifing___" + text);
+			logger.info("notifing___" + text);
 			Activator.tts.setText(text);
 			Activator.tts.speak(false);
 		}
 	}
+	/**
+	 * Establece que el receptor tenga el foco del teclado, de modo que cualquier
+	 * tecla que se pulse la recibe
+	 */
 	public void setFocus() {	
 		viewer.getControl().setFocus();
 		
@@ -193,13 +213,8 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		viewer.getTextWidget().setMenu(menu);
 		getSite().registerContextMenu(menuMgr, viewer);
 	}
-	/*private void showMessage(String message) {
-		MessageDialog.openInformation(
-			viewer.getControl().getShell(),
-			"Sample View",
-			message);
-	}*/
-	/**
+
+	/*
 	 * Passing the focus request to the viewer's control.
 	 */
 	
@@ -218,14 +233,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		manager.add(speakAction);
 		manager.add(openPreferencesAction);
 	}
-	/*private void fillContextMenu(IMenuManager manager) {
-		manager.add(increaseAction);
-		manager.add(decreaseAction);
-		manager.add(recogAction);
-		manager.add(new Separator());
-		manager.add(speakAction);
-		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
-	*/
+
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(new Separator());
 		manager.add(increaseAction);
@@ -257,6 +265,7 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		decreaseAction.setToolTipText("Decrease font size");
 		decreaseAction.setImageDescriptor(Activator.getImageDescriptor("icons/font_decrease_icon.gif"));
 		speakAction = new Action(){
+
 			public void run() {
 				codeControl.speaker();				
 			}
@@ -271,7 +280,6 @@ public class CodeView extends ViewPart implements ISelectionListener {
 						ar.stopRecording();
 						System.out.println("Performing recognition");
 				        String r=ar.performRecognition();
-						//String r="Testing...";
 				        System.out.println(r);
 				        ar.restoreRecording();
 				        System.out.println("Restoring recogniser");
@@ -313,6 +321,10 @@ public class CodeView extends ViewPart implements ISelectionListener {
 	
 		
 	}
+	/**
+	 * Inicializa el visor
+	 * @param site La interfaz del visor
+	 */
 	public void init(IViewSite site) throws PartInitException{
 		super.init(site);
 		this.setPartName("COPS plugin view");
@@ -321,6 +333,9 @@ public class CodeView extends ViewPart implements ISelectionListener {
 		ar=new AudioRecorder();
 		recogActive=false;
 	}
+	/**
+	 * Para la ejecucion del reconocedor de Iatros y del listener
+	 */
 	public void dispose() {
 		getSite().getPage().removeSelectionListener(this);
 		ar.stopRecording();
