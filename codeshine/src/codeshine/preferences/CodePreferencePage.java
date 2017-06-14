@@ -9,9 +9,9 @@ import codeshine.Activator;
 
 
 /**
- * Esta clase representa la página de preferencias 
+ * Esta clase representa la pagina de preferencias 
  * que contribuye al dialogo de Preferencias.
- * La página se usa solo para modificar las preferencias
+ * Se usa solo para modificar las preferencias
  */
 
 public class CodePreferencePage
@@ -47,7 +47,7 @@ public class CodePreferencePage
 
 
 	/** 
-	 * Inicializa a página de preferencias para el espacio de trabajo (workbench)
+	 * Inicializa la pagina de preferencias para el espacio de trabajo (workbench)
 	 * @param workbench - el espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */

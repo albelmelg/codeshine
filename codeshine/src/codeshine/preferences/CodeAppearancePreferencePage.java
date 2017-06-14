@@ -1,7 +1,7 @@
 
 package codeshine.preferences;
 /**
- * Esta clase sirve para definir la ventana de las preferencias sobre la letra del código.
+ * Esta clase sirve para definir la ventana de las preferencias sobre la letra del codigo.
  * 
  */
 
@@ -46,7 +46,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		setPreferenceStore(preferenceStore);
 	}
 	
-	/** Constructor, creará un objeto de tipo Field Editor Preference Page
+	/** Constructor, creara un objeto de tipo Field Editor Preference Page
 	 * @param title el titulo
 	 * @param image la imagen
 	 * @param style tipo de estilo
@@ -56,7 +56,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		super(title, image, style);
 	}
 
-	/** Inicializa a página de preferencias para el espacio de trabajo (workbench)
+	/** Inicializa a pagina de preferencias para el espacio de trabajo (workbench)
 	 * @param workbench - el espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
@@ -64,7 +64,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 
 	}
-	/** Notifica que se ha pulsado el botón cancelar de la página
+	/** Notifica que se ha pulsado el boton cancelar de la página
 	 * @return false - Para poder cancelaro
 	 * @see org.eclipse.jface.preference.IPreferencePage#performCancel()
 	 */
@@ -74,8 +74,8 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		return false;
 	}
 
-	/** Notifica que se ha pulsado el botón OK 
-	 * @return True o False - True para que se pulse el botón o False si se debe cancelar la acción
+	/** Notifica que se ha pulsado el boton OK 
+	 * @return True o False - True para que se pulse el boton o False si se debe cancelar la acción
 	 * @see org.eclipse.jface.preference.IPreferencePage#performOk()
 	 */
 	public boolean performOk() {
@@ -99,7 +99,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 		
 	}
 	/**
-	 *  Se instancian los campos para la edición de la fuente, del fondo y del resaltado
+	 *  Se instancian los campos para la edicion de la fuente, del fondo y del resaltado
 	 */
 
 	protected void createFieldEditors() {	
@@ -127,7 +127,7 @@ public class CodeAppearancePreferencePage extends FieldEditorPreferencePage
 			
 			/** 
 			 * Se guardan los valores introducidos en los campos
-			 * @param PropertyChangeEvent event  
+			 * @param event  El evento
 			 * */
 			public void propertyChange(final PropertyChangeEvent event){
 				if (event.getProperty().equals(IPreferenceConstants.P_BOOLEAN)){

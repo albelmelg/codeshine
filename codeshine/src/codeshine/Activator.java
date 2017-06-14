@@ -6,7 +6,7 @@ import org.osgi.framework.BundleContext;
 import codeshine.preferences.IPreferenceConstants;
 import codeshine.speech.TtsClass;
 /**
- * La clase Activator class controla el ciclo de vida del plugin
+ * Controla el ciclo de vida del plugin
  */
 public class Activator extends AbstractUIPlugin {
 
@@ -28,7 +28,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Se inicia la comunicacion para que el plugin pueda realizar sus actividades.
-	 * Throws java.lang.exception
+	 * 
 	 * @param context es un objeto que se usa para poder interactuar con el Framework
 	 */
 	public void start(final BundleContext context) throws Exception {
@@ -38,8 +38,8 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Detiene la ejecución del bundle y a ejecución del plugin debe detenerse.
-	 *  Throws java.lang.exception
+	 * Detiene la ejecución del bundle y a ejecucion del plugin debe detenerse.
+	 * 
 	 * @param context es un objeto que se usa para poder interactuar con el Framework
 	 */
 	public void stop(final BundleContext context)throws Exception {
@@ -49,9 +49,9 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	/**
-	 * Devuelve el objeto compartido
+	 * Devuelve el objeto compartido plugin
 	 *
-	 * @return el objeto compartido
+	 * @return El objeto compartido
 	 */
 	public static Activator getDefault() {
 		return plugin;

@@ -25,7 +25,7 @@ import codeshine.utils.TokenList;
 import codeshine.utils.TokensLabelProvider;
 import org.apache.log4j.Logger;
 /**
- * Esta clase guarda todos los campos 
+ * Guarda todos los campos 
  * que has introducido en las preferencias 
  * para poder guardarlo como perfil predeterminado
  * 
@@ -135,8 +135,8 @@ public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
 
 	}
 
-	/** Inicializa a página de preferencias para el espacio de trabajo (workbench)
-	 * @param workbench - el espacio de trabajo
+	/** Inicializa la pagina de preferencias para el espacio de trabajo (workbench)
+	 * @param workbench El espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(final IWorkbench workbench) {
@@ -152,7 +152,7 @@ public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
 	}
 	
 	/**
-	 * Este método se usa para guardar el perfil
+	 * Este metodo se usa para guardar el perfil
 	 */
 	
 	public void performApply(){
@@ -181,8 +181,8 @@ public class CodeProfilesPreferencePage extends FieldEditorPreferencePage
 		}
 		
 	}	
-	/** Notifica que se ha pulsado el botón OK 
-	 * @return True o False - True para que se pulse el botón o False si se debe cancelar la acción
+	/** Notifica que se ha pulsado el boton OK 
+	 * @return True o False - True para que se pulse el boton o False si se debe cancelar la accion
 	 * @see org.eclipse.jface.preference.IPreferencePage#performOk()
 	 */
 	public boolean performOk(){

@@ -9,7 +9,7 @@ import codeshine.utils.TokenList;
 import codeshine.utils.Token;
 
 /**
- *
+ *Configura el perfil
  */
 
 public class ProfileConfigProvider extends ArrayContentProvider implements
@@ -17,7 +17,7 @@ public class ProfileConfigProvider extends ArrayContentProvider implements
 	
 	static Logger logger = Logger.getLogger(ProfileConfigProvider.class);
 	/**
-	 *
+	 *Constructor
 	 */
 	public ProfileConfigProvider() {
 		super();
@@ -26,7 +26,7 @@ public class ProfileConfigProvider extends ArrayContentProvider implements
 	/**
      * 
      * Devuelve el valor de la columna para 
-     * el índice especificado 
+     * el indice especificado 
      * 
      * @param element el objeto elemento para el cual consulta el valor de la columna
      * @param columnIndex el índice del valor de la columna que queremos consultar.
@@ -79,7 +79,7 @@ public class ProfileConfigProvider extends ArrayContentProvider implements
 		}catch (NullPointerException exception){exception.printStackTrace();}
 	}
 	/**
-	 * Método que devuelve en formato TokenList los objetos que se le pasan.
+	 * Devuelve en formato TokenList los objetos que se le pasan.
 	 *@param collection  Colección de objectos
 	 *@return una Token List con los ebjetos que se reciben
 	 */

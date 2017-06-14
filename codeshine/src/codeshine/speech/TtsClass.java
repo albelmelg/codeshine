@@ -12,7 +12,10 @@ import codeshine.utils.Token;
 import codeshine.utils.Trie;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.apache.log4j.Logger;
-
+/**
+ * La principal funcionalidad de esta clase es convertir el texto a voz
+ * TextToSpeech
+ */
 public class TtsClass extends Thread{
 	
 	String voiceName;
@@ -59,8 +62,8 @@ public class TtsClass extends Thread{
     
     }
     /**
-     * Método que informa con un logger del string que se le pasa.
-     * @param input - Una cadena string
+     * Informa con un logger del string que se le pasa.
+     * @param input Una cadena string
      */
     
     public void setText(String input){
@@ -68,7 +71,7 @@ public class TtsClass extends Thread{
     	logger.info("SetText__");
     }
     /**
-     * Cancela la ejecución del procesamiento de la voz
+     * Cancela la ejecucion del procesamiento de la voz
      * @see com.sun.speech.freetts.Voice
      */
     public void deallocate(){
@@ -86,7 +89,7 @@ public class TtsClass extends Thread{
       }
     /**
      * Determina si debe empezar la ejecución de habla.
-     * @param preproccessor - si es F ejecutará un hilo. Si es T llamará al método speak()
+     * @param preproccessor si es F ejecutará un hilo. Si es T llamará al método speak()
      */
     public void speak(boolean preproccessor){
     	if (!preproccessor){
@@ -98,7 +101,7 @@ public class TtsClass extends Thread{
     		this.speak();
     }
     /**
-     * Se modifica el parámetro de tipo TokenList profile
+     * Se modifica el parametro de tipo TokenList profile
      * @param profile - El perfil
      */
     public void setProfile(TokenList profile){

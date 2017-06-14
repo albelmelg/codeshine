@@ -50,7 +50,7 @@ import org.apache.log4j.Logger;
 
 // IDEA: recording format vs. storage format; possible conversion?
 /**	Clase que permite grabar audio y convertirlo en un archivo
-	Este programa abre dos líneas: una para grabar
+	Este programa abre dos lineas: una para grabar
 	y otra para reproducir. En un bucle infinito lee de las líneas
 	de grabar y las escribe en la de reproducir.
 
@@ -158,7 +158,7 @@ public class AudioRecorder
   }
 
   /**
-   * Empieza la grabación
+   * Empieza la grabacion
    */
   public void startRecording() {
     targetDataLine = AudioCommon.getTargetDataLine( strMixerName, audioFormat, nInternalBufferSize);
@@ -174,7 +174,7 @@ public class AudioRecorder
     recorder.stopRecording();
   }
 /**
- * Antes de empezar una nueva grabación se resetea el estado
+ * Antes de empezar una nueva grabacion se resetea el estado
  */
   public void restoreRecording() {
     // Restore state for new recording
@@ -231,8 +231,8 @@ public class AudioRecorder
 
   }
 /**
- * Cuando hemos terminado de hablar, pulsamos el botón
- * otra vez y se ejecuta éste método, el de terminar de ejectarse el reconocedor.
+ * Cuando hemos terminado de hablar, pulsamos el boton
+ * otra vez y se ejecuta este metodo, el de terminar de ejectarse el reconocedor.
  */
   public void terminateRecogniser() {
     // Terminar iATROS
@@ -338,7 +338,7 @@ public class AudioRecorder
       super.start();
     }
     /**
-     * Detiene la grabación. La línea debe pararse despues de que se quede vacía
+     * Detiene la grabacion. La linea debe pararse despues de que se quede vacia
      * (con el método drain())
      */
     public void stopRecording() {
@@ -350,7 +350,7 @@ public class AudioRecorder
   }
   
   /**
-   * Clase que sirve para poder hacer la grabación en directo
+   * Clase que sirve para poder hacer la grabacion en directo
    *
    */
 
@@ -358,9 +358,9 @@ public class AudioRecorder
     private AudioInputStream maudioInputStream;
     /**
      * Constructor
-     * @param line - La línea
-     * @param targetType - Objeto que tiene el tipo de archivo
-     * @param file - El archivo final
+     * @param line La línea
+     * @param targetType Objeto que tiene el tipo de archivo
+     * @param file El archivo final
      */
     public DirectRecorder(TargetDataLine line, AudioFileFormat.Type targetType, File file) {
       super(line, targetType, file);

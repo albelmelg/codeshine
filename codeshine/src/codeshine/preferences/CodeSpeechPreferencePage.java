@@ -82,7 +82,7 @@ public class CodeSpeechPreferencePage extends FieldEditorPreferencePage
 				
 			}
 			/**
-			 * Recoge el evento que tiene el botón seleccionado e informa.
+			 * Recoge el evento que tiene el boton seleccionado e informa.
 			 */
 			public void widgetSelected(final SelectionEvent event) {
 
@@ -104,7 +104,7 @@ public class CodeSpeechPreferencePage extends FieldEditorPreferencePage
 
 	}
 
-	/** Inicializa a página de preferencias para el espacio de trabajo (workbench)
+	/** Inicializa la pagina de preferencias para el espacio de trabajo (workbench)
 	 * @param workbench - el espacio de trabajo
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
@@ -113,8 +113,8 @@ public class CodeSpeechPreferencePage extends FieldEditorPreferencePage
 
 	}
 	
-	/** Notifica que se ha pulsado el botón OK 
-	 * @return True o False - True para que se pulse el botón o False si se debe cancelar la acción
+	/** Notifica que se ha pulsado el boton OK 
+	 * @return True o False True para que se pulse el boton o False si se debe cancelar la accion
 	 * @see org.eclipse.jface.preference.IPreferencePage#performOk()
 	 */
 	
@@ -124,8 +124,8 @@ public class CodeSpeechPreferencePage extends FieldEditorPreferencePage
 		return super.performOk();
 	}
 	
-	/** Notifica que se ha pulsado el botón cancelar de la página
-	 * @return false - Para poder cancelaro
+	/** Notifica que se ha pulsado el boton cancelar de la página
+	 * @return false Para poder cancelaro
 	 * @see org.eclipse.jface.preference.IPreferencePage#performCancel()
 	 */
 	public boolean performCancel() {

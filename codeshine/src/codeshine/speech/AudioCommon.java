@@ -26,7 +26,7 @@ import org.apache.log4j.BasicConfigurator;
 
 
 
-/** Métodos comunes para ejemplos de muestras de audio.
+/** Metodos comunes para ejemplos de muestras de audio.
  */
 public class AudioCommon
 {
@@ -56,12 +56,12 @@ public class AudioCommon
 	}
 
 	/**	
-	 * Método que intenta obtener un tipo de archivo
-	 * de audio para la extensión que le pasamos.
+	 * Metodo que intenta obtener un tipo de archivo
+	 * de audio para la extension que le pasamos.
 	 * Examina todos los tipos de archivo disponibles
-	 * y si la extensión que le pasamos coincide la devuelve.
+	 * y si la extension que le pasamos coincide la devuelve.
 	 * 
-	 * @param strExtension - La extensión
+	 * @param strExtension La extensión
 	 * @return un objeto que coinicide con la extensión que le pasamos
 	 * @return null si no coincide nada
 	*/
@@ -79,7 +79,7 @@ public class AudioCommon
 	}
 	/**
 	 * Crea una lista con los mixers que hay,
-	 * si no hay ninguno, sale de la ejecución.
+	 * si no hay ninguno, sale de la ejecucion.
 	 */
 	public static void listMixersAndExit()
 	{
