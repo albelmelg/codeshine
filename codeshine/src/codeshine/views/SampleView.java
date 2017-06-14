@@ -13,13 +13,14 @@ import org.eclipse.swt.SWT;
 
 
 /**
- * This sample class demonstrates how to plug-in a new
- * workbench view. The view shows data obtained from the
- * model. The sample creates a dummy model on the fly,
- * but a real implementation would connect to the model
- * available either in this or another plug-in (e.g. the workspace).
- * The view is connected to the model using a content provider.
- * <p>
+ * Esta clase sirve para conetar el plugin a la vista workbench.
+ * La vista muestra como los datos se obtienen del modelo.
+ * La clase muestra una implementacion real de como conectar el modelo
+ * disponible en este u otro plugin.
+ * La vista se conecta al modelo usando un proveedor de contenido
+ **/
+	
+ /* 
  * The view uses a label provider to define how model
  * objects should be presented in the view. Each
  * view can present the same model objects using
@@ -33,7 +34,7 @@ import org.eclipse.swt.SWT;
 public class SampleView extends ViewPart {
 
 	/**
-	 * The ID of the view as specified by the extension.
+	 * El ID del visor con la extension especificada.
 	 */
 	public static final String ID = "codeshine.views.SampleView";
 
@@ -73,6 +74,7 @@ public class SampleView extends ViewPart {
 					getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
 		}
 	}
+	@SuppressWarnings("deprecation")
 	class NameSorter extends ViewerSorter {
 	}
 
@@ -83,9 +85,10 @@ public class SampleView extends ViewPart {
 	}
 
 	/**
-	 * This is a callback that will allow us
-	 * to create the viewer and initialize it.
+	 * Esto es un callback que nos permite
+	 * crear el visor e inicializarlo.
 	 */
+	@SuppressWarnings("deprecation")
 	public void createPartControl(Composite parent) {
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
@@ -182,7 +185,7 @@ public class SampleView extends ViewPart {
 	}
 
 	/**
-	 * Passing the focus request to the viewer's control.
+	 * Pasa el foco de la solicitud al usuario
 	 */
 	public void setFocus() {
 		viewer.getControl().setFocus();
