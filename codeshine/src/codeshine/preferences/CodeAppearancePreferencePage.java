@@ -2,7 +2,6 @@
 package codeshine.preferences;
 /**
  * Esta clase sirve para definir la ventana de las preferencias sobre la letra del codigo.
- * 
  */
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
